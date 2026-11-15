@@ -53,7 +53,26 @@ export default defineConfig({
         {
           text: '通用知识',
           items: [
-            { text: '认识腕表结构', link: '/general/structure/' }
+            { text: '认识腕表结构', link: '/general/structure/' },
+            { text: '腕表材质', link: '/general/materials/' },
+            {
+              text: '腕表功能',
+              collapsed: false,
+              items: [
+                {
+                  text: '基本认知',
+                  collapsed: false,
+                  items: [
+                    { text: '日期', link: '/general/functions/basic/date' },
+                    { text: '计时', link: '/general/functions/basic/chronograph' },
+                    { text: '年历', link: '/general/functions/basic/annual-calendar' },
+                    { text: '动力存储', link: '/general/functions/basic/power-reserve' },
+                    { text: '双时区', link: '/general/functions/basic/dual-time' }
+                  ]
+                }
+              ]
+            },
+            { text: '腕表行业生态', link: '/general/ecosystem/' }
           ]
         }
       ]
