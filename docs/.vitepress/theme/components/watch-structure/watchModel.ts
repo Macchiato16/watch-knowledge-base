@@ -3,13 +3,21 @@ import { CASE_OVERALL_SUBPARTS, type PartId } from './partsData'
 
 export type PhysicalPartId = Exclude<PartId, 'case-overall'>
 
-const SHELL_PARTS: Set<PhysicalPartId> = new Set(['crystal', 'mid-case', 'case-back', 'strap'])
+const SHELL_PARTS: Set<PhysicalPartId> = new Set([
+  'crystal',
+  'mid-case',
+  'lugs',
+  'case-back',
+  'strap',
+  'clasp'
+])
 
 interface BaseMatState {
   colorHex: number
   opacity: number
   transparent: boolean
   depthWrite: boolean
+  envMapIntensity: number
 }
 
 export interface WatchTeachingModel {
@@ -20,7 +28,7 @@ export interface WatchTeachingModel {
     shellGhost: number
     selectedPart: PartId | null
   }) => void
-  stepAnimation: (dt: number) => void
+  stepAnimation: (dt: number, advanceMechanism: boolean) => boolean
   resetAnimationPose: () => void
   dispose: () => void
 }
@@ -47,6 +55,15 @@ export function createWatchTeachingModel(THREE: typeof THREEType): WatchTeaching
     return mat
   }
 
+  // 共享的高亮轮廓线材质（随呼吸脉冲动态调节不透明度，使选中部件边缘一目了然）
+  const sharedEdgeMat = new THREE.LineBasicMaterial({
+    color: 0xa5f3fc,
+    transparent: true,
+    opacity: 0.95,
+    depthTest: true
+  })
+  materials.push(sharedEdgeMat)
+
   const registerMesh = (
     partId: PhysicalPartId,
     mesh: THREEType.Mesh,
@@ -60,9 +77,20 @@ export function createWatchTeachingModel(THREE: typeof THREEType): WatchTeaching
         colorHex: mat.color.getHex(),
         opacity: mat.opacity,
         transparent: mat.transparent,
-        depthWrite: mat.depthWrite
+        depthWrite: mat.depthWrite,
+        envMapIntensity: mat.envMapIntensity ?? 1
       }
       mesh.userData.baseMat = baseState
+
+      // 为每个可视网格附加高精度折角轮廓线，选中时点亮描边
+      const edgeGeo = trackGeo(new THREE.EdgesGeometry(mesh.geometry, 26))
+      const edgeLines = new THREE.LineSegments(edgeGeo, sharedEdgeMat)
+      edgeLines.visible = false
+      edgeLines.raycast = () => {}
+      edgeLines.renderOrder = 4
+      mesh.add(edgeLines)
+      mesh.userData.edgeLines = edgeLines
+
       const list = partMeshes.get(partId) ?? []
       list.push(mesh)
       partMeshes.set(partId, list)
@@ -79,10 +107,6 @@ export function createWatchTeachingModel(THREE: typeof THREEType): WatchTeaching
     return g
   }
 
-  // =========================================================================
-  // 1. 中壳 (mid-case)：环形主体 + 斜面表圈口 + 四只一体表耳 + 把管护肩
-  // =========================================================================
-  const midCaseGroup = initPartGroup('mid-case')
   const steelBrushedMat = () =>
     createPartMat({
       color: 0xd4dce6,
@@ -96,7 +120,11 @@ export function createWatchTeachingModel(THREE: typeof THREEType): WatchTeaching
       roughness: 0.14
     })
 
-  // 车削环形中壳与上表圈轮廓
+  // =========================================================================
+  // 1. 中壳 (mid-case)：环形主体 + 斜面表圈口 + 把管护肩（不含表耳，与表耳独立区分）
+  // =========================================================================
+  const midCaseGroup = initPartGroup('mid-case')
+
   const caseProfile = [
     new THREE.Vector2(1.21, -0.27),
     new THREE.Vector2(1.45, -0.27),
@@ -117,7 +145,6 @@ export function createWatchTeachingModel(THREE: typeof THREEType): WatchTeaching
   registerMesh('mid-case', midCaseBody)
   midCaseGroup.add(midCaseBody)
 
-  // 抛光表圈倒角亮边
   const bezelHighlight = new THREE.Mesh(
     trackGeo(new THREE.TorusGeometry(1.31, 0.032, 16, 64)),
     steelPolishedMat()
@@ -127,41 +154,6 @@ export function createWatchTeachingModel(THREE: typeof THREEType): WatchTeaching
   registerMesh('mid-case', bezelHighlight)
   midCaseGroup.add(bezelHighlight)
 
-  // 四只表耳（12点与6点方向各一对，略向下弯曲贴合手腕）
-  const lugShape = new THREE.Shape()
-  lugShape.moveTo(-0.14, 0)
-  lugShape.lineTo(0.14, 0)
-  lugShape.lineTo(0.095, 0.68)
-  lugShape.quadraticCurveTo(0.07, 0.76, 0.0, 0.76)
-  lugShape.quadraticCurveTo(-0.07, 0.76, -0.095, 0.68)
-  lugShape.closePath()
-
-  const lugGeo = trackGeo(
-    new THREE.ExtrudeGeometry(lugShape, {
-      depth: 0.26,
-      bevelEnabled: true,
-      bevelSegments: 2,
-      steps: 1,
-      bevelSize: 0.022,
-      bevelThickness: 0.022
-    })
-  )
-  lugGeo.translate(0, 0, -0.13)
-
-  for (const zDir of [1, -1] as const) {
-    const lugPairHolder = new THREE.Group()
-    lugPairHolder.rotation.y = zDir === 1 ? 0 : Math.PI
-    for (const x of [-0.86, 0.86]) {
-      const lug = new THREE.Mesh(lugGeo, steelBrushedMat())
-      lug.rotation.x = Math.PI / 2 + 0.12
-      lug.position.set(x, 0.02, 1.32)
-      registerMesh('mid-case', lug)
-      lugPairHolder.add(lug)
-    }
-    midCaseGroup.add(lugPairHolder)
-  }
-
-  // 3点位把管座（连接表冠处）
   const crownTube = new THREE.Mesh(
     trackGeo(new THREE.CylinderGeometry(0.11, 0.11, 0.2, 24)),
     steelPolishedMat()
@@ -172,7 +164,74 @@ export function createWatchTeachingModel(THREE: typeof THREEType): WatchTeaching
   midCaseGroup.add(crownTube)
 
   // =========================================================================
-  // 2. 表镜 (crystal)：微拱蓝宝石玻璃 + 边缘淡蓝倒角圈（保证透明且清晰可辨）
+  // 2. 表耳 (lugs)：12点与6点方向四只微弯倒角表耳 + 侧面生耳穿孔细节
+  // =========================================================================
+  const lugsGroup = initPartGroup('lugs')
+  const lugsTopSub = new THREE.Group()
+  const lugsBottomSub = new THREE.Group()
+  lugsGroup.add(lugsTopSub, lugsBottomSub)
+
+  const lugShape = new THREE.Shape()
+  lugShape.moveTo(-0.155, 0)
+  lugShape.lineTo(0.155, 0)
+  lugShape.lineTo(0.105, 0.7)
+  lugShape.quadraticCurveTo(0.075, 0.79, 0.0, 0.79)
+  lugShape.quadraticCurveTo(-0.075, 0.79, -0.105, 0.7)
+  lugShape.closePath()
+
+  const lugGeo = trackGeo(
+    new THREE.ExtrudeGeometry(lugShape, {
+      depth: 0.27,
+      bevelEnabled: true,
+      bevelSegments: 2,
+      steps: 1,
+      bevelSize: 0.024,
+      bevelThickness: 0.024
+    })
+  )
+  lugGeo.translate(0, 0, -0.135)
+
+  const lugPinHoleGeo = trackGeo(new THREE.CylinderGeometry(0.038, 0.038, 0.29, 14))
+  lugPinHoleGeo.rotateZ(Math.PI / 2)
+
+  const lugHitGeo = trackGeo(new THREE.BoxGeometry(0.42, 0.38, 0.86))
+
+  const buildLugPair = (holder: THREEType.Group, zDir: 1 | -1) => {
+    const pairFrame = new THREE.Group()
+    pairFrame.rotation.y = zDir === 1 ? 0 : Math.PI
+    for (const x of [-0.86, 0.86]) {
+      const lug = new THREE.Mesh(lugGeo, steelBrushedMat())
+      lug.rotation.x = Math.PI / 2 + 0.12
+      lug.position.set(x, 0.02, 1.31)
+      registerMesh('lugs', lug)
+      pairFrame.add(lug)
+
+      // 表耳外侧生耳孔端头示意，增强辨识度
+      const lugHolePin = new THREE.Mesh(
+        lugPinHoleGeo,
+        createPartMat({ color: 0x64748b, metalness: 0.85, roughness: 0.3 })
+      )
+      lugHolePin.position.set(x, -0.03, 1.72)
+      registerMesh('lugs', lugHolePin)
+      pairFrame.add(lugHolePin)
+
+      // 手机端表耳独立点击热区
+      const lugHit = new THREE.Mesh(
+        lugHitGeo,
+        new THREE.MeshBasicMaterial({ visible: false })
+      )
+      lugHit.position.set(x, -0.01, 1.68)
+      registerMesh('lugs', lugHit, true)
+      pairFrame.add(lugHit)
+    }
+    holder.add(pairFrame)
+  }
+
+  buildLugPair(lugsTopSub, -1)
+  buildLugPair(lugsBottomSub, 1)
+
+  // =========================================================================
+  // 3. 表镜 (crystal)：微拱蓝宝石玻璃 + 边缘高光密封环
   // =========================================================================
   const crystalGroup = initPartGroup('crystal')
   const crystalProfile = [
@@ -198,15 +257,14 @@ export function createWatchTeachingModel(THREE: typeof THREEType): WatchTeaching
   registerMesh('crystal', crystalGlass)
   crystalGroup.add(crystalGlass)
 
-  // 表镜边缘密封衬圈与光学折射高光环（方便识别与点击边缘）
   const crystalRim = new THREE.Mesh(
-    trackGeo(new THREE.TorusGeometry(1.195, 0.022, 14, 64)),
+    trackGeo(new THREE.TorusGeometry(1.195, 0.024, 14, 64)),
     createPartMat({
       color: 0x93c5fd,
       metalness: 0.25,
       roughness: 0.18,
       transparent: true,
-      opacity: 0.72
+      opacity: 0.75
     })
   )
   crystalRim.rotation.x = Math.PI / 2
@@ -214,7 +272,7 @@ export function createWatchTeachingModel(THREE: typeof THREEType): WatchTeaching
   crystalGroup.add(crystalRim)
 
   // =========================================================================
-  // 3. 底盖 (case-back)：旋入式背透金属外圈（含开盖凹槽）+ 背透蓝宝石镜片
+  // 4. 底盖 (case-back)：旋入式背透金属外圈（含开盖凹槽）+ 背透蓝宝石镜片
   // =========================================================================
   const caseBackGroup = initPartGroup('case-back')
   const backRingProfile = [
@@ -232,7 +290,6 @@ export function createWatchTeachingModel(THREE: typeof THREEType): WatchTeaching
   registerMesh('case-back', caseBackRing)
   caseBackGroup.add(caseBackRing)
 
-  // 6个旋入式开盖槽口标识块
   const notchGeo = trackGeo(new THREE.BoxGeometry(0.11, 0.05, 0.07))
   for (let i = 0; i < 6; i++) {
     const angle = (i / 6) * Math.PI * 2
@@ -246,7 +303,6 @@ export function createWatchTeachingModel(THREE: typeof THREEType): WatchTeaching
     caseBackGroup.add(notch)
   }
 
-  // 背透玻璃窗
   const backGlass = new THREE.Mesh(
     trackGeo(new THREE.CylinderGeometry(1.025, 1.025, 0.035, 48)),
     createPartMat({
@@ -263,7 +319,7 @@ export function createWatchTeachingModel(THREE: typeof THREEType): WatchTeaching
   caseBackGroup.add(backGlass)
 
   // =========================================================================
-  // 4. 表冠 (crown)：防滑坑纹旋钮 + 内部上链把芯（柄轴）
+  // 5. 表冠 (crown)：防滑坑纹旋钮 + 内部上链把芯（柄轴）
   // =========================================================================
   const crownGroup = initPartGroup('crown')
   const crownHead = new THREE.Mesh(
@@ -275,7 +331,6 @@ export function createWatchTeachingModel(THREE: typeof THREEType): WatchTeaching
   registerMesh('crown', crownHead)
   crownGroup.add(crownHead)
 
-  // 表冠端面微拱圆帽
   const crownCap = new THREE.Mesh(
     trackGeo(new THREE.CylinderGeometry(0.19, 0.23, 0.045, 32)),
     steelBrushedMat()
@@ -285,7 +340,6 @@ export function createWatchTeachingModel(THREE: typeof THREEType): WatchTeaching
   registerMesh('crown', crownCap)
   crownGroup.add(crownCap)
 
-  // 18道表冠防滑坑纹棱条
   const ridgeGeo = trackGeo(new THREE.BoxGeometry(0.205, 0.024, 0.024))
   const ridgeMat = steelBrushedMat()
   for (let i = 0; i < 18; i++) {
@@ -297,7 +351,6 @@ export function createWatchTeachingModel(THREE: typeof THREEType): WatchTeaching
     crownGroup.add(ridge)
   }
 
-  // 把芯（上链柄轴，展开时清晰看到表冠如何伸入机芯）
   const windingStem = new THREE.Mesh(
     trackGeo(new THREE.CylinderGeometry(0.042, 0.042, 0.62, 16)),
     createPartMat({ color: 0x94a3b8, metalness: 0.85, roughness: 0.22 })
@@ -307,9 +360,8 @@ export function createWatchTeachingModel(THREE: typeof THREEType): WatchTeaching
   registerMesh('crown', windingStem)
   crownGroup.add(windingStem)
 
-  // 隐形点击热区放大（手机端手指轻松点中表冠）
   const crownHitProxy = new THREE.Mesh(
-    trackGeo(new THREE.SphereGeometry(0.34, 12, 12)),
+    trackGeo(new THREE.SphereGeometry(0.35, 12, 12)),
     new THREE.MeshBasicMaterial({ visible: false })
   )
   crownHitProxy.position.x = 0.12
@@ -317,7 +369,7 @@ export function createWatchTeachingModel(THREE: typeof THREEType): WatchTeaching
   crownGroup.add(crownHitProxy)
 
   // =========================================================================
-  // 5. 表带 (strap)：上下两端弧形多节渐变表带 + 生耳栓 + 针扣示意
+  // 6. 表带 (strap)：上下两端弧形多节渐变表带 + 生耳栓 + 活动游环（表扣已独立拆分）
   // =========================================================================
   const strapGroup = initPartGroup('strap')
   const strapTopSub = new THREE.Group()
@@ -328,19 +380,18 @@ export function createWatchTeachingModel(THREE: typeof THREEType): WatchTeaching
     createPartMat({
       color: 0x1e293b,
       metalness: 0.15,
-      roughness: 0.62
+      roughness: 0.58
     })
   const strapAccentMat = () =>
     createPartMat({
       color: 0x334155,
       metalness: 0.22,
-      roughness: 0.48
+      roughness: 0.45
     })
 
-  const buildStrapHalf = (targetGroup: THREEType.Group, zDir: 1 | -1, withBuckle: boolean) => {
-    // 生耳连接端头
+  const buildStrapHalf = (targetGroup: THREEType.Group, zDir: 1 | -1, isTopShortEnd: boolean) => {
     const springBar = new THREE.Mesh(
-      trackGeo(new THREE.CylinderGeometry(0.045, 0.045, 1.72, 16)),
+      trackGeo(new THREE.CylinderGeometry(0.045, 0.045, 1.7, 16)),
       steelPolishedMat()
     )
     springBar.rotation.z = Math.PI / 2
@@ -348,12 +399,11 @@ export function createWatchTeachingModel(THREE: typeof THREEType): WatchTeaching
     registerMesh('strap', springBar)
     targetGroup.add(springBar)
 
-    // 4段沿手腕自然下弯的渐缩表带节块
     const segments = [
-      { w: 1.5, len: 0.42, thick: 0.16, y: -0.03, zOff: 1.88, tilt: 0.08 },
-      { w: 1.4, len: 0.46, thick: 0.145, y: -0.1, zOff: 2.31, tilt: 0.2 },
-      { w: 1.3, len: 0.48, thick: 0.13, y: -0.23, zOff: 2.75, tilt: 0.32 },
-      { w: 1.2, len: 0.46, thick: 0.115, y: -0.4, zOff: 3.17, tilt: 0.44 }
+      { w: 1.48, len: 0.42, thick: 0.16, y: -0.03, zOff: 1.9, tilt: 0.08 },
+      { w: 1.38, len: 0.46, thick: 0.145, y: -0.1, zOff: 2.33, tilt: 0.2 },
+      { w: 1.28, len: 0.48, thick: 0.13, y: -0.23, zOff: 2.77, tilt: 0.32 },
+      { w: 1.2, len: 0.44, thick: 0.115, y: -0.39, zOff: 3.18, tilt: 0.44 }
     ]
 
     segments.forEach((seg, idx) => {
@@ -366,7 +416,6 @@ export function createWatchTeachingModel(THREE: typeof THREEType): WatchTeaching
       registerMesh('strap', block)
       targetGroup.add(block)
 
-      // 表面纵向运动凹槽压纹条，提升表带质感与辨识度
       const groove = new THREE.Mesh(
         trackGeo(new THREE.BoxGeometry(seg.w * 0.56, seg.thick + 0.014, seg.len * 0.82)),
         strapAccentMat()
@@ -376,10 +425,10 @@ export function createWatchTeachingModel(THREE: typeof THREEType): WatchTeaching
       registerMesh('strap', groove)
       targetGroup.add(groove)
 
-      // 6点方向末节调节孔示意
-      if (!withBuckle && idx >= 2) {
+      // 6点方向长带端扣眼孔细节
+      if (!isTopShortEnd && idx >= 1) {
         const holeDot = new THREE.Mesh(
-          trackGeo(new THREE.CylinderGeometry(0.045, 0.045, seg.thick + 0.02, 12)),
+          trackGeo(new THREE.CylinderGeometry(0.048, 0.048, seg.thick + 0.024, 12)),
           createPartMat({ color: 0x0f172a, metalness: 0.1, roughness: 0.9 })
         )
         holeDot.position.copy(block.position)
@@ -389,17 +438,16 @@ export function createWatchTeachingModel(THREE: typeof THREEType): WatchTeaching
       }
     })
 
-    // 12点方向针扣金属外框示意
-    if (withBuckle) {
-      const buckleFrame = new THREE.Mesh(
-        trackGeo(new THREE.TorusGeometry(0.46, 0.055, 12, 24)),
-        steelPolishedMat()
+    // 12点方向表带游环（Keeper loop）
+    if (isTopShortEnd) {
+      const keeper = new THREE.Mesh(
+        trackGeo(new THREE.BoxGeometry(1.34, 0.22, 0.16)),
+        strapAccentMat()
       )
-      buckleFrame.scale.set(1.45, 0.62, 1)
-      buckleFrame.rotation.x = -Math.PI / 2 - 0.44
-      buckleFrame.position.set(0, -0.52, zDir * 3.45)
-      registerMesh('strap', buckleFrame)
-      targetGroup.add(buckleFrame)
+      keeper.position.set(0, -0.31, zDir * 2.98)
+      keeper.rotation.x = zDir * 0.38
+      registerMesh('strap', keeper)
+      targetGroup.add(keeper)
     }
   }
 
@@ -407,7 +455,70 @@ export function createWatchTeachingModel(THREE: typeof THREEType): WatchTeaching
   buildStrapHalf(strapBottomSub, 1, false)
 
   // =========================================================================
-  // 6. 机芯 (movement)：镂空窗口主夹板 + 发条盒 + 传动齿轮系 + 桥板/红宝石 + 镂空刻度指针圈
+  // 7. 表扣 (clasp)：12点方向表带末端独立金属表扣（铰链生耳轴 + 左右弧臂 + 前横梁 + 中央扣针）
+  // =========================================================================
+  const claspGroup = initPartGroup('clasp')
+  const claspLocalFrame = new THREE.Group()
+  claspLocalFrame.position.set(0, -0.49, -3.38)
+  claspLocalFrame.rotation.x = -0.44
+  claspGroup.add(claspLocalFrame)
+
+  // 表扣连接横轴
+  const claspHingeBar = new THREE.Mesh(
+    trackGeo(new THREE.CylinderGeometry(0.045, 0.045, 1.32, 18)),
+    steelPolishedMat()
+  )
+  claspHingeBar.rotation.z = Math.PI / 2
+  registerMesh('clasp', claspHingeBar)
+  claspLocalFrame.add(claspHingeBar)
+
+  // 左右两侧倒角金属扣框臂
+  const claspSideArmGeo = trackGeo(new THREE.BoxGeometry(0.11, 0.11, 0.62))
+  for (const sideX of [-0.64, 0.64]) {
+    const arm = new THREE.Mesh(claspSideArmGeo, steelBrushedMat())
+    arm.position.set(sideX, 0.01, -0.29)
+    registerMesh('clasp', arm)
+    claspLocalFrame.add(arm)
+  }
+
+  // 前端加宽表扣横梁（含微凹扣针槽视觉层次）
+  const claspFrontCrossbar = new THREE.Mesh(
+    trackGeo(new THREE.BoxGeometry(1.39, 0.125, 0.15)),
+    steelPolishedMat()
+  )
+  claspFrontCrossbar.position.set(0, 0.015, -0.58)
+  registerMesh('clasp', claspFrontCrossbar)
+  claspLocalFrame.add(claspFrontCrossbar)
+
+  // 中央活动扣针（Tang Pin）+ 针座轴套
+  const pinCollar = new THREE.Mesh(
+    trackGeo(new THREE.CylinderGeometry(0.075, 0.075, 0.16, 16)),
+    steelBrushedMat()
+  )
+  pinCollar.rotation.z = Math.PI / 2
+  registerMesh('clasp', pinCollar)
+  claspLocalFrame.add(pinCollar)
+
+  const bucklePin = new THREE.Mesh(
+    trackGeo(new THREE.BoxGeometry(0.085, 0.045, 0.64)),
+    steelPolishedMat()
+  )
+  bucklePin.position.set(0, 0.055, -0.3)
+  bucklePin.rotation.x = 0.09
+  registerMesh('clasp', bucklePin)
+  claspLocalFrame.add(bucklePin)
+
+  // 表扣放大点击热区（方便手机端一眼点中末端表扣）
+  const claspHitBox = new THREE.Mesh(
+    trackGeo(new THREE.BoxGeometry(1.65, 0.45, 0.85)),
+    new THREE.MeshBasicMaterial({ visible: false })
+  )
+  claspHitBox.position.set(0, 0.02, -0.3)
+  registerMesh('clasp', claspHitBox, true)
+  claspLocalFrame.add(claspHitBox)
+
+  // =========================================================================
+  // 8. 机芯 (movement)：镂空窗口主夹板 + 发条盒 + 传动齿轮系 + 桥板/红宝石 + 镂空刻度指针圈
   // =========================================================================
   const movementGroup = initPartGroup('movement')
   const plateMat = () =>
@@ -441,12 +552,9 @@ export function createWatchTeachingModel(THREE: typeof THREEType): WatchTeaching
       roughness: 0.2
     })
 
-  // 带摆轮镂空视窗（位于 x=-0.38, z=+0.52）的主夹板
   const mainplateShape = new THREE.Shape()
   mainplateShape.absarc(0, 0, 1.18, 0, Math.PI * 2, false)
   const balanceCutout = new THREE.Path()
-  // Shape在XY平面，extrude后旋转 X=-PI/2，使得 shape(x, y) -> world(x, -z)
-  // 目标世界坐标 (x=-0.38, z=+0.52) 对应 shape(x=-0.38, y=-0.52)
   balanceCutout.absarc(-0.38, -0.52, 0.42, 0, Math.PI * 2, true)
   mainplateShape.holes.push(balanceCutout)
 
@@ -465,7 +573,6 @@ export function createWatchTeachingModel(THREE: typeof THREEType): WatchTeaching
   registerMesh('movement', mainplate)
   movementGroup.add(mainplate)
 
-  // 发条盒（1-2点位银灰拉丝圆鼓，标注储能核心）
   const barrel = new THREE.Mesh(
     trackGeo(new THREE.CylinderGeometry(0.42, 0.42, 0.13, 36)),
     createPartMat({ color: 0xcbd5e1, metalness: 0.82, roughness: 0.25 })
@@ -474,7 +581,6 @@ export function createWatchTeachingModel(THREE: typeof THREEType): WatchTeaching
   registerMesh('movement', barrel)
   movementGroup.add(barrel)
 
-  // 传动轮系（3枚金色辐条齿轮，运转时缓慢联动）
   const gearMeshes: Array<{ mesh: THREEType.Group; speed: number }> = []
   const createSpokedGear = (radius: number, teethCount: number) => {
     const g = new THREE.Group()
@@ -523,7 +629,6 @@ export function createWatchTeachingModel(THREE: typeof THREEType): WatchTeaching
   movementGroup.add(fourthWheel)
   gearMeshes.push({ mesh: fourthWheel, speed: 0.85 })
 
-  // 背面夹板桥板 + 红宝石轴承 + 蓝钢螺丝（提升机芯立体层次）
   const upperBridgeShape = new THREE.Shape()
   upperBridgeShape.moveTo(-0.85, 0.08)
   upperBridgeShape.quadraticCurveTo(0, 0.95, 0.92, 0.15)
@@ -546,7 +651,6 @@ export function createWatchTeachingModel(THREE: typeof THREEType): WatchTeaching
   registerMesh('movement', upperBridge)
   movementGroup.add(upperBridge)
 
-  // 红宝石轴承与蓝钢螺丝点缀
   const jewelPositions: Array<[number, number]> = [
     [0, 0],
     [0.36, -0.36],
@@ -575,7 +679,6 @@ export function createWatchTeachingModel(THREE: typeof THREEType): WatchTeaching
     movementGroup.add(screw)
   }
 
-  // 正面镂空刻度外圈与指针示意（明确正面读时朝向，且不遮挡机芯内部）
   const chapterRing = new THREE.Mesh(
     trackGeo(new THREE.RingGeometry(1.03, 1.17, 64)),
     createPartMat({
@@ -594,7 +697,6 @@ export function createWatchTeachingModel(THREE: typeof THREEType): WatchTeaching
   for (let h = 0; h < 12; h++) {
     const angle = (h / 12) * Math.PI * 2
     if (h === 0) {
-      // 12点位双条刻度，帮助快速辨认正上方12点方向
       for (const offset of [-0.032, 0.032]) {
         const m12 = new THREE.Mesh(markerGeo, steelPolishedMat())
         m12.position.set(offset, 0.11, -1.08)
@@ -610,14 +712,13 @@ export function createWatchTeachingModel(THREE: typeof THREEType): WatchTeaching
     }
   }
 
-  // 时针与分针（经典10点10分张角，避开7点位摆轮视窗）
   const hourHand = new THREE.Mesh(
     trackGeo(new THREE.BoxGeometry(0.055, 0.018, 0.62)),
     steelPolishedMat()
   )
   hourHand.geometry.translate(0, 0, -0.24)
   hourHand.position.set(0, 0.125, 0)
-  hourHand.rotation.y = (Math.PI / 6) * 2 // 10点方向
+  hourHand.rotation.y = (Math.PI / 6) * 2
   registerMesh('movement', hourHand)
   movementGroup.add(hourHand)
 
@@ -627,7 +728,7 @@ export function createWatchTeachingModel(THREE: typeof THREEType): WatchTeaching
   )
   minuteHand.geometry.translate(0, 0, -0.38)
   minuteHand.position.set(0, 0.145, 0)
-  minuteHand.rotation.y = -(Math.PI / 6) * 2 // 2点方向
+  minuteHand.rotation.y = -(Math.PI / 6) * 2
   registerMesh('movement', minuteHand)
   movementGroup.add(minuteHand)
 
@@ -640,7 +741,7 @@ export function createWatchTeachingModel(THREE: typeof THREEType): WatchTeaching
   movementGroup.add(centerPinion)
 
   // =========================================================================
-  // 7. 摆轮 (balance-wheel)：7点位镂空窗金色往复飞轮 + 砝码钉 + 摆轮夹板
+  // 9. 摆轮 (balance-wheel)：7点位镂空窗金色往复飞轮 + 砝码钉 + 摆轮夹板
   // =========================================================================
   const BALANCE_X = -0.38
   const BALANCE_Z = 0.52
@@ -656,7 +757,6 @@ export function createWatchTeachingModel(THREE: typeof THREEType): WatchTeaching
       roughness: 0.18
     })
 
-  // 摆轮外圈
   const balanceRim = new THREE.Mesh(
     trackGeo(new THREE.TorusGeometry(0.31, 0.032, 16, 48)),
     goldBalanceMat()
@@ -665,7 +765,6 @@ export function createWatchTeachingModel(THREE: typeof THREEType): WatchTeaching
   registerMesh('balance-wheel', balanceRim)
   balanceSpinGroup.add(balanceRim)
 
-  // 3根摆轮辐条
   for (let i = 0; i < 3; i++) {
     const spoke = new THREE.Mesh(
       trackGeo(new THREE.BoxGeometry(0.3, 0.02, 0.03)),
@@ -677,7 +776,6 @@ export function createWatchTeachingModel(THREE: typeof THREEType): WatchTeaching
     balanceSpinGroup.add(spoke)
   }
 
-  // 8枚惯性调校砝码微钉（典型高端无卡度摆轮特征）
   const weightGeo = trackGeo(new THREE.CylinderGeometry(0.018, 0.018, 0.045, 10))
   for (let i = 0; i < 8; i++) {
     const a = (i / 8) * Math.PI * 2
@@ -689,7 +787,6 @@ export function createWatchTeachingModel(THREE: typeof THREEType): WatchTeaching
     balanceSpinGroup.add(wPin)
   }
 
-  // 摆轴与摆轮夹板横桥
   const balanceStaff = new THREE.Mesh(
     trackGeo(new THREE.CylinderGeometry(0.025, 0.025, 0.15, 14)),
     steelPolishedMat()
@@ -714,7 +811,6 @@ export function createWatchTeachingModel(THREE: typeof THREEType): WatchTeaching
   registerMesh('balance-wheel', balanceJewel)
   balanceGroup.add(balanceJewel)
 
-  // 环形无重叠点击热区（外圈点中摆轮，内圈留给游丝，手机点击互不干扰）
   const balanceHitRing = new THREE.Mesh(
     trackGeo(new THREE.RingGeometry(0.185, 0.37, 32)),
     new THREE.MeshBasicMaterial({ visible: false, side: THREE.DoubleSide })
@@ -724,7 +820,7 @@ export function createWatchTeachingModel(THREE: typeof THREEType): WatchTeaching
   balanceGroup.add(balanceHitRing)
 
   // =========================================================================
-  // 8. 游丝 (hairspring)：同轴阿基米德螺旋细簧，呼吸式收放动画
+  // 10. 游丝 (hairspring)：同轴阿基米德螺旋细簧，呼吸式收放动画
   // =========================================================================
   const hairspringGroup = initPartGroup('hairspring')
   const hairspringBreathGroup = new THREE.Group()
@@ -737,7 +833,6 @@ export function createWatchTeachingModel(THREE: typeof THREEType): WatchTeaching
       roughness: 0.2
     })
 
-  // 生成 4.25 圈阿基米德螺旋曲线管道
   const spiralPoints: THREEType.Vector3[] = []
   const turns = 4.25
   const totalSteps = 150
@@ -757,7 +852,6 @@ export function createWatchTeachingModel(THREE: typeof THREEType): WatchTeaching
   registerMesh('hairspring', hairspringTube)
   hairspringBreathGroup.add(hairspringTube)
 
-  // 游丝内桩圆环（Collet）与外桩固定块（Stud）
   const collet = new THREE.Mesh(
     trackGeo(new THREE.CylinderGeometry(0.038, 0.038, 0.035, 16)),
     hairspringMat()
@@ -774,7 +868,6 @@ export function createWatchTeachingModel(THREE: typeof THREEType): WatchTeaching
   registerMesh('hairspring', stud)
   hairspringGroup.add(stud)
 
-  // 游丝中心圆形热区（半径 <= 0.18，与摆轮外圈热区严格无重叠）
   const hairspringHitDisk = new THREE.Mesh(
     trackGeo(new THREE.CylinderGeometry(0.18, 0.18, 0.06, 24)),
     new THREE.MeshBasicMaterial({ visible: false })
@@ -783,16 +876,14 @@ export function createWatchTeachingModel(THREE: typeof THREEType): WatchTeaching
   hairspringGroup.add(hairspringHitDisk)
 
   // =========================================================================
-  // 9. 自动陀 (rotor)：背面中央轴承 + 半圆形镂空偏心重锤 + 玫瑰金配重外弧
+  // 11. 自动陀 (rotor)：背面中央轴承 + 半圆形镂空偏心重锤 + 玫瑰金配重外弧
   // =========================================================================
   const rotorGroup = initPartGroup('rotor')
   const rotorSpinGroup = new THREE.Group()
-  // 默认停靠角度朝向 12-1 点位，完全避开 7 点位摆轮游丝，保证正反面都不遮挡
   const DEFAULT_ROTOR_ANGLE = -Math.PI * 0.42
   rotorSpinGroup.rotation.y = DEFAULT_ROTOR_ANGLE
   rotorGroup.add(rotorSpinGroup)
 
-  // 半圆形镂空陀身（外径 1.08，内有两扇镂空减重窗，使重心集中在外缘）
   const rotorBodyShape = new THREE.Shape()
   rotorBodyShape.absarc(0, 0, 1.02, -Math.PI * 0.48, Math.PI * 0.48, false)
   rotorBodyShape.lineTo(0, 0.18)
@@ -829,7 +920,6 @@ export function createWatchTeachingModel(THREE: typeof THREEType): WatchTeaching
   registerMesh('rotor', rotorPlate)
   rotorSpinGroup.add(rotorPlate)
 
-  // 外缘高密度玫瑰金配重弧边（直观体现“偏心重锤”物理特征）
   const heavyRimShape = new THREE.Shape()
   heavyRimShape.absarc(0, 0, 1.09, -Math.PI * 0.48, Math.PI * 0.48, false)
   heavyRimShape.absarc(0, 0, 0.94, Math.PI * 0.48, -Math.PI * 0.48, true)
@@ -856,7 +946,6 @@ export function createWatchTeachingModel(THREE: typeof THREEType): WatchTeaching
   registerMesh('rotor', rotorHeavyRim)
   rotorSpinGroup.add(rotorHeavyRim)
 
-  // 中央滚珠轴承毂与陶瓷滚珠点缀
   const bearingHub = new THREE.Mesh(
     trackGeo(new THREE.CylinderGeometry(0.19, 0.19, 0.075, 28)),
     steelPolishedMat()
@@ -876,16 +965,116 @@ export function createWatchTeachingModel(THREE: typeof THREEType): WatchTeaching
   }
 
   // =========================================================================
-  // 展开插值、外壳透视与部件高亮状态控制
+  // 展开插值、外壳透视与强对比度高亮描边系统
   // =========================================================================
+  let currentExplode = 0
   let currentShellGhost = 0
   let currentSelected: PartId | null = null
   let animElapsed = 0
+  let pulseElapsed = 0
 
-  const highlightEmissive = new THREE.Color(0x2563eb)
+  // 高对比度青蓝自发光 + 亮色提亮，配合未选中部件 X 光透视压暗（opacity 0.17）
+  const highlightEmissive = new THREE.Color(0x06b6d4)
+  const selectedTintBoost = new THREE.Color(0x67e8f9)
   const zeroColor = new THREE.Color(0x000000)
-  const dimScratchColor = new THREE.Color()
-  const dimTargetColor = new THREE.Color(0x475569)
+  const scratchColor = new THREE.Color()
+  const dimTargetColor = new THREE.Color(0x0f172a)
+
+  const applyHighlightVisuals = () => {
+    const activeSet = new Set<PhysicalPartId>()
+    if (currentSelected === 'case-overall') {
+      for (const sub of CASE_OVERALL_SUBPARTS) {
+        if (sub !== 'case-overall') activeSet.add(sub)
+      }
+    } else if (currentSelected) {
+      activeSet.add(currentSelected)
+    }
+
+    const hasSelection = activeSet.size > 0
+    // 柔和的呼吸光效，使高亮区域极其醒目
+    const pulseWave = 0.5 + 0.5 * Math.sin(pulseElapsed * 4.5)
+    sharedEdgeMat.opacity = 0.72 + 0.28 * pulseWave
+
+    for (const [partId, meshes] of partMeshes.entries()) {
+      const isSelected = activeSet.has(partId)
+      const isShell = SHELL_PARTS.has(partId)
+      const ghostAmount = isShell && !isSelected ? currentShellGhost : 0
+
+      for (const mesh of meshes) {
+        const mat = mesh.material as THREEType.MeshStandardMaterial
+        const base = mesh.userData.baseMat as BaseMatState
+        const edgeLines = mesh.userData.edgeLines as THREEType.LineSegments | undefined
+
+        if (edgeLines) {
+          edgeLines.visible = isSelected
+        }
+
+        scratchColor.setHex(base.colorHex)
+
+        if (isSelected) {
+          // 提亮深色材质（如深灰表带、夹板），叠加高亮青色自发光与环境反射增强
+          scratchColor.lerp(selectedTintBoost, 0.34)
+          mat.color.copy(scratchColor)
+          mat.emissive.copy(highlightEmissive)
+          const baseGlow = base.transparent ? 0.75 : 0.55
+          mat.emissiveIntensity = baseGlow + 0.32 * pulseWave
+          mat.envMapIntensity = 1.35
+
+          const selOpacity = base.transparent ? Math.max(base.opacity, 0.78) : 1
+          if (mat.transparent !== base.transparent || mat.depthWrite !== true) {
+            mat.transparent = base.transparent
+            mat.depthWrite = true
+            mat.needsUpdate = true
+          }
+          mat.opacity = selOpacity
+          mesh.renderOrder = 1
+        } else if (hasSelection) {
+          // 未选中部件显著退居背景（17% X光半透明轮廓 + 抑制高光反射），突出选中主角
+          scratchColor.lerp(dimTargetColor, 0.68)
+          mat.color.copy(scratchColor)
+          mat.emissive.copy(zeroColor)
+          mat.emissiveIntensity = 0
+          mat.envMapIntensity = 0.14
+
+          const dimmedOpacity =
+            ghostAmount > 0.01
+              ? THREE.MathUtils.lerp(0.17, 0.06, ghostAmount)
+              : base.transparent
+                ? Math.min(base.opacity, 0.12)
+                : 0.17
+
+          if (!mat.transparent || mat.depthWrite) {
+            mat.transparent = true
+            mat.depthWrite = false
+            mat.needsUpdate = true
+          }
+          mat.opacity = dimmedOpacity
+          mesh.renderOrder = 2
+        } else {
+          // 无选中状态：恢复真实金属与玻璃质感
+          mat.color.copy(scratchColor)
+          mat.emissive.copy(zeroColor)
+          mat.emissiveIntensity = 0
+          mat.envMapIntensity = base.envMapIntensity
+
+          const targetOpacity =
+            ghostAmount > 0.01
+              ? THREE.MathUtils.lerp(base.opacity, 0.07, ghostAmount)
+              : base.opacity
+          const shouldBeTransparent = base.transparent || ghostAmount > 0.01
+          const nextDepthWrite = ghostAmount > 0.2 ? false : base.depthWrite
+
+          if (mat.transparent !== shouldBeTransparent || mat.depthWrite !== nextDepthWrite) {
+            mat.transparent = shouldBeTransparent
+            mat.depthWrite = nextDepthWrite
+            mat.needsUpdate = true
+          }
+          mat.opacity = targetOpacity
+          mesh.renderOrder = 0
+        }
+      }
+    }
+  }
 
   const setState = (opts: {
     explode: number
@@ -893,16 +1082,31 @@ export function createWatchTeachingModel(THREE: typeof THREEType): WatchTeaching
     selectedPart: PartId | null
   }) => {
     const t = THREE.MathUtils.clamp(opts.explode, 0, 1)
+    currentExplode = t
     currentShellGhost = THREE.MathUtils.clamp(opts.shellGhost, 0, 1)
-    currentSelected = opts.selectedPart
+    if (opts.selectedPart !== currentSelected) {
+      // 新选中某一部件时从脉冲波峰起步，提供即时醒目的点亮反馈
+      pulseElapsed = Math.PI / (2 * 4.5)
+      currentSelected = opts.selectedPart
+    }
 
-    // 1) 按真实装配层次进行轴向与径向爆炸插值
-    crystalGroup.position.set(0, THREE.MathUtils.lerp(0.28, 1.85, t), 0)
+    // 按装配关系执行轴向与径向爆炸插值（中壳 -> 表耳 -> 表带 -> 表扣 依次拉开）
+    crystalGroup.position.set(0, THREE.MathUtils.lerp(0.28, 1.88, t), 0)
     midCaseGroup.position.set(0, THREE.MathUtils.lerp(0, 0.85, t), 0)
 
+    lugsGroup.position.set(0, THREE.MathUtils.lerp(0, 0.85, t), 0)
+    lugsTopSub.position.set(0, 0, THREE.MathUtils.lerp(0, -0.26, t))
+    lugsBottomSub.position.set(0, 0, THREE.MathUtils.lerp(0, 0.26, t))
+
     strapGroup.position.set(0, THREE.MathUtils.lerp(0, 0.85, t), 0)
-    strapTopSub.position.set(0, 0, THREE.MathUtils.lerp(0, -0.82, t))
-    strapBottomSub.position.set(0, 0, THREE.MathUtils.lerp(0, 0.82, t))
+    strapTopSub.position.set(0, 0, THREE.MathUtils.lerp(0, -0.92, t))
+    strapBottomSub.position.set(0, 0, THREE.MathUtils.lerp(0, 0.92, t))
+
+    claspGroup.position.set(
+      0,
+      THREE.MathUtils.lerp(0, 1.02, t),
+      THREE.MathUtils.lerp(0, -1.5, t)
+    )
 
     crownGroup.position.set(THREE.MathUtils.lerp(1.56, 2.62, t), 0.01, 0)
     movementGroup.position.set(0, 0, 0)
@@ -920,98 +1124,52 @@ export function createWatchTeachingModel(THREE: typeof THREEType): WatchTeaching
     rotorGroup.position.set(0, THREE.MathUtils.lerp(-0.155, -1.12, t), 0)
     caseBackGroup.position.set(0, THREE.MathUtils.lerp(-0.285, -1.85, t), 0)
 
-    // 2) 计算高亮集合与外壳虚化透明度
-    const activeSet = new Set<PhysicalPartId>()
-    if (currentSelected === 'case-overall') {
-      for (const sub of CASE_OVERALL_SUBPARTS) {
-        if (sub !== 'case-overall') activeSet.add(sub)
-      }
-    } else if (currentSelected) {
-      activeSet.add(currentSelected)
-    }
-
-    const hasSelection = activeSet.size > 0
-
-    for (const [partId, meshes] of partMeshes.entries()) {
-      const isSelected = activeSet.has(partId)
-      const isShell = SHELL_PARTS.has(partId)
-      // 若正在观察机芯局部放大，且该外壳部件未被主动选中，则虚化外壳避免遮挡
-      const ghostAmount = isShell && !isSelected ? currentShellGhost : 0
-
-      for (const mesh of meshes) {
-        const mat = mesh.material as THREEType.MeshStandardMaterial
-        const base = mesh.userData.baseMat as BaseMatState
-
-        dimScratchColor.setHex(base.colorHex)
-        if (hasSelection && !isSelected) {
-          dimScratchColor.lerp(dimTargetColor, 0.35)
-        }
-        mat.color.copy(dimScratchColor)
-
-        if (isSelected) {
-          mat.emissive.copy(highlightEmissive)
-          mat.emissiveIntensity = base.transparent ? 0.55 : 0.38
-        } else {
-          mat.emissive.copy(zeroColor)
-          mat.emissiveIntensity = 0
-        }
-
-        let targetOpacity = base.opacity
-        if (isSelected && base.transparent) {
-          // 选中表镜等透明件时适度提高不透明度，让轮廓清晰可见
-          targetOpacity = Math.max(base.opacity, 0.56)
-        } else if (ghostAmount > 0.01) {
-          targetOpacity = THREE.MathUtils.lerp(base.opacity, 0.07, ghostAmount)
-        } else if (hasSelection && !isSelected && !base.transparent) {
-          targetOpacity = 0.88
-        }
-
-        const shouldBeTransparent =
-          base.transparent || ghostAmount > 0.01 || (hasSelection && !isSelected)
-        const nextDepthWrite = ghostAmount > 0.2 ? false : base.depthWrite
-
-        if (mat.transparent !== shouldBeTransparent || mat.depthWrite !== nextDepthWrite) {
-          mat.transparent = shouldBeTransparent
-          mat.depthWrite = nextDepthWrite
-          mat.needsUpdate = true
-        }
-        mat.opacity = targetOpacity
-      }
-    }
+    applyHighlightVisuals()
   }
 
   const getRaycastTargets = (): THREEType.Object3D[] => {
-    // 机芯局部放大模式下外壳虚化时，跳过外壳拾取，使手指可直接点选内部机芯、摆轮与游丝
     if (currentShellGhost > 0.5) {
       return allPickables.filter((m) => !SHELL_PARTS.has(m.userData.partId))
     }
     return allPickables
   }
 
-  const stepAnimation = (dt: number) => {
-    animElapsed += Math.min(dt, 0.05)
+  const stepAnimation = (dt: number, advanceMechanism: boolean): boolean => {
+    const clampedDt = Math.min(dt, 0.05)
+    let changed = false
 
-    // 摆轮规律往复摆动（约 0.85 Hz 教学节奏，肉眼可清晰观察摆幅与转向）
-    const swingPhase = Math.sin(animElapsed * 5.3)
-    balanceSpinGroup.rotation.y = swingPhase * 0.68
+    if (advanceMechanism) {
+      animElapsed += clampedDt
 
-    // 游丝随摆轮同相呼吸收放与微扭转
-    const breathScale = 1 + swingPhase * 0.09
-    hairspringBreathGroup.scale.set(breathScale, 1, breathScale)
-    hairspringBreathGroup.rotation.y = swingPhase * 0.15
+      const swingPhase = Math.sin(animElapsed * 5.3)
+      balanceSpinGroup.rotation.y = swingPhase * 0.68
 
-    // 自动陀连续平顺偏转上链运动
-    rotorSpinGroup.rotation.y =
-      DEFAULT_ROTOR_ANGLE + animElapsed * 0.65 + Math.sin(animElapsed * 1.2) * 0.35
+      const breathScale = 1 + swingPhase * 0.09
+      hairspringBreathGroup.scale.set(breathScale, 1, breathScale)
+      hairspringBreathGroup.rotation.y = swingPhase * 0.15
 
-    // 传动轮系缓慢联动示意
-    for (const g of gearMeshes) {
-      g.mesh.rotation.y += dt * g.speed
+      rotorSpinGroup.rotation.y =
+        DEFAULT_ROTOR_ANGLE + animElapsed * 0.65 + Math.sin(animElapsed * 1.2) * 0.35
+
+      for (const g of gearMeshes) {
+        g.mesh.rotation.y += clampedDt * g.speed
+      }
+      changed = true
     }
+
+    // 当有部件被选中高亮时，持续更新呼吸描边亮度，保证暂停运转时选中态依然醒目
+    if (currentSelected !== null) {
+      pulseElapsed += clampedDt
+      applyHighlightVisuals()
+      changed = true
+    }
+
+    return changed
   }
 
   const resetAnimationPose = () => {
     animElapsed = 0
+    pulseElapsed = 0
     balanceSpinGroup.rotation.y = 0
     hairspringBreathGroup.scale.set(1, 1, 1)
     hairspringBreathGroup.rotation.y = 0
@@ -1019,6 +1177,7 @@ export function createWatchTeachingModel(THREE: typeof THREEType): WatchTeaching
     for (const g of gearMeshes) {
       g.mesh.rotation.y = 0
     }
+    setState({ explode: currentExplode, shellGhost: currentShellGhost, selectedPart: currentSelected })
   }
 
   const dispose = () => {
@@ -1029,7 +1188,6 @@ export function createWatchTeachingModel(THREE: typeof THREEType): WatchTeaching
     partMeshes.clear()
   }
 
-  // 初始化默认整表姿态
   setState({ explode: 0, shellGhost: 0, selectedPart: null })
 
   return {

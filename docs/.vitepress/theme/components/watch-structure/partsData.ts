@@ -1,10 +1,12 @@
 export type PartId =
   | 'case-overall'
   | 'mid-case'
+  | 'lugs'
   | 'crystal'
   | 'case-back'
   | 'crown'
   | 'strap'
+  | 'clasp'
   | 'movement'
   | 'rotor'
   | 'balance-wheel'
@@ -39,9 +41,9 @@ export const WATCH_PARTS: WatchPartInfo[] = [
     categoryLabel: '外部结构（整体概念）',
     anchor: '#part-case-overall',
     summary:
-      '表壳是容纳并保护机芯、表盘的外部壳体总成概念，通常由上方的表镜及外圈固定结构、中间的中壳、背面的底盖共同配合密封组成。',
+      '表壳是容纳并保护机芯、表盘的外部壳体总成概念，通常由上方的表镜及外圈固定结构、中间的中壳（含延伸出的表耳）、背面的底盖共同配合密封组成。',
     relationNote:
-      '注意区分「表壳整体」与「中壳」：日常说“精钢表壳、玫瑰金表壳”指整个外壳总成；拆解讨论磕碰或打磨部位时，则细分为中壳、表圈、底盖等具体零件。',
+      '注意区分「表壳整体」与「中壳」「表耳」：日常说“精钢表壳、玫瑰金表壳”指整个外壳总成；具体讨论磕碰或打磨位置时，则细分为中壳、表耳、表圈、底盖等部位。',
     businessTip:
       '二手评估时整体观察壳形线条是否饱满对称、倒角与拉丝工艺是否一致，判断是否存在重度抛光翻新。',
     focusCamera: {
@@ -52,19 +54,37 @@ export const WATCH_PARTS: WatchPartInfo[] = [
   {
     id: 'mid-case',
     name: '中壳',
-    alias: '中层表壳（含一体表耳）',
+    alias: '中层表壳',
     category: 'exterior',
     categoryLabel: '外部结构',
     anchor: '#part-mid-case',
     summary:
-      '表壳的主体骨架，内部车削出容纳机芯的腔体，向上承接表镜（及表圈），向下锁合底盖，右侧开孔安装表冠，上下延伸出连接表带的四只表耳。',
+      '表壳整体的主干骨架，内部车削出容纳机芯的腔体，向上承接表镜（及表圈），向下锁合底盖，右侧开孔安装表冠把管，上下衔接四只表耳。',
     relationNote:
-      '中壳属于「表壳整体」的核心承重部件；多数现代腕表的表耳与中壳一体成型。',
+      '中壳属于「表壳整体」的核心承重结构，负责把前、后、侧向的密封与操作部件连成一体。',
     businessTip:
-      '中壳侧面与表耳棱线最易在日常佩戴中留下划痕或磕印，也是查验壳号刻印（视品牌年代而定）与翻新痕迹的重点区域。',
+      '中壳9点位光面或拉丝侧壁最易在日常佩戴中留下磕印与划痕，也是观察原厂壳身线条厚薄的关键区域。',
     focusCamera: {
-      position: [3.1, 1.65, 2.9],
-      target: [0, 0.15, 0]
+      position: [3.05, 1.55, 2.75],
+      target: [0, 0.12, 0]
+    }
+  },
+  {
+    id: 'lugs',
+    name: '表耳',
+    alias: '生耳位 / 壳耳',
+    category: 'exterior',
+    categoryLabel: '外部结构',
+    anchor: '#part-lugs',
+    summary:
+      '从表壳上下两端（12点与6点方向）向外延伸出的四只对称耳状结构，内侧加工有生耳孔或贯穿螺丝孔，用于固定表带并顺应手腕弧度向下微弯贴合。',
+    relationNote:
+      '多数现代腕表的表耳与中壳一体切削成型（本模型为便于教学识别将其独立高亮展示）；两只同侧表耳内侧的距离即常说的“耳宽（表带宽度）”。',
+    businessTip:
+      '拆装表带时表耳背面极易留下生耳批刮痕；同时表耳外侧倒角棱线是否锋利、粗细是否对称，是鉴别是否经历过重抛打磨的核心位置。',
+    focusCamera: {
+      position: [2.55, 1.75, 2.85],
+      target: [0, 0.05, 0.65]
     }
   },
   {
@@ -124,19 +144,37 @@ export const WATCH_PARTS: WatchPartInfo[] = [
   {
     id: 'strap',
     name: '表带',
-    alias: '链带 / 胶带 / 皮带（含表扣）',
+    alias: '链带 / 胶带 / 皮带',
     category: 'exterior',
     categoryLabel: '外部结构',
     anchor: '#part-strap',
     summary:
-      '通过生耳（弹簧栓）或专用螺丝固定在中壳上下表耳之间，配合表扣将腕表稳固佩戴于手腕的部件，常见金属链带、硫化橡胶带、鳄鱼皮/小牛皮带等材质。',
+      '通过生耳（弹簧栓）或专用螺丝安装在上下表耳之间，环绕手腕承托表头的带状部件，常见金属链带、硫化橡胶带、鳄鱼皮/小牛皮带等材质。',
     relationNote:
-      '在业务表述中，不含表带的主体部分常称作「表头」；同一基础型号搭配不同表带往往构成不同的官方配置或编码后缀。',
+      '在业务表述中，拆去表带与表扣后的主体常称作「表头」；同一基础型号搭配不同表带往往构成不同的官方配置或编码后缀。',
     businessTip:
-      '二手流通中需核对金属链带的节数长短与松旷度、皮带/胶带是否为原装及老化程度，以及表扣开合弹力与贵金属印记。',
+      '二手流通中需核对金属链带的节数是否齐全与链节松旷度，以及皮带、橡胶带是否为原装、有无汗渍开裂老化。',
     focusCamera: {
       position: [3.5, 2.2, 3.4],
-      target: [0, 0, 0.3]
+      target: [0, -0.1, 0.5]
+    }
+  },
+  {
+    id: 'clasp',
+    name: '表扣',
+    alias: '针扣 / 折叠扣 / 蝴蝶扣',
+    category: 'exterior',
+    categoryLabel: '外部结构',
+    anchor: '#part-clasp',
+    summary:
+      '安装在表带末端、用于将两端表带连接闭合于手腕的锁紧部件。常见轻便直观的「针扣」以及开合防脱落性更好的「单折扣、双折（蝴蝶）扣、带微调保险折叠扣」。',
+    relationNote:
+      '贵金属腕表的原装表扣通常采用与表壳一致的贵金属（或钛合金等指定材质）打造，单枚原装金扣本身即具备较高配件价值。',
+    businessTip:
+      '贴合桌面放表时表扣最易产生桌面磨痕；验表需重点核对表扣原装度、贵金属印记（如 Au750 / Pt950）、开合卡扣弹力是否松脱及微调结构是否顺畅。',
+    focusCamera: {
+      position: [2.25, 1.25, -4.55],
+      target: [0, -0.45, -3.35]
     }
   },
   {
@@ -221,4 +259,4 @@ export const WATCH_PARTS_MAP: Record<PartId, WatchPartInfo> = Object.fromEntries
 ) as Record<PartId, WatchPartInfo>
 
 /** 「表壳整体」在三维模型中对应高亮的组成部件集合 */
-export const CASE_OVERALL_SUBPARTS: PartId[] = ['mid-case', 'crystal', 'case-back']
+export const CASE_OVERALL_SUBPARTS: PartId[] = ['mid-case', 'lugs', 'crystal', 'case-back']

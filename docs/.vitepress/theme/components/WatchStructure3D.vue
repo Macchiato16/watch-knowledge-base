@@ -17,7 +17,7 @@ const errorMessage = ref('')
 const viewMode = ref<ViewMode>('assembled')
 const explodePercent = ref(0)
 const isPlaying = ref(true)
-const selectedPartId = ref<PartId | null>('case-overall')
+const selectedPartId = ref<PartId | null>(null)
 
 const exteriorParts = WATCH_PARTS.filter((p) => p.category === 'exterior')
 const interiorParts = WATCH_PARTS.filter((p) => p.category === 'interior')
@@ -361,8 +361,7 @@ onMounted(() => {
           dirtyRender = true
         }
 
-        if (isPlaying.value) {
-          watchModel.stepAnimation(dt)
+        if (watchModel.stepAnimation(dt, isPlaying.value)) {
           dirtyRender = true
         }
 
@@ -419,26 +418,38 @@ onMounted(() => {
                 targetGhost = 0
               }
             }
-            // 在展开状态下根据爆炸偏移微调观察目标高度，确保相机对准展开后的实际部件层
+            // 在展开状态下根据爆炸偏移微调观察目标位置，确保相机对准展开后的实际部件层
             const [px, py, pz] = info.focusCamera.position
             const [tx, ty, tz] = info.focusCamera.target
             let explodedYShift = 0
+            let explodedZShift = 0
             if (targetExplode > 0.3) {
               const yMap: Partial<Record<PartId, number>> = {
                 crystal: 1.55 * targetExplode,
                 'mid-case': 0.85 * targetExplode,
+                lugs: 0.85 * targetExplode,
                 strap: 0.85 * targetExplode,
+                clasp: 1.02 * targetExplode,
                 hairspring: -0.28 * targetExplode,
                 'balance-wheel': -0.58 * targetExplode,
                 rotor: -1.0 * targetExplode,
                 'case-back': -1.6 * targetExplode
               }
+              const zMap: Partial<Record<PartId, number>> = {
+                lugs: 0.26 * targetExplode,
+                clasp: -1.5 * targetExplode
+              }
               explodedYShift = yMap[partId] ?? 0
+              explodedZShift = zMap[partId] ?? 0
             }
             const distBoost = targetExplode > 0.3 ? 1.18 : 1
             setCameraPreset(
-              [px * distBoost, py * distBoost + explodedYShift * 0.65, pz * distBoost],
-              [tx, ty + explodedYShift, tz]
+              [
+                px * distBoost,
+                py * distBoost + explodedYShift * 0.65,
+                pz * distBoost + explodedZShift * 0.65
+              ],
+              [tx, ty + explodedYShift, tz + explodedZShift]
             )
           }
           watchModel.setState({
@@ -619,7 +630,7 @@ onMounted(() => {
           <text x="235" y="38" fill="#cbd5e1" font-size="12">表镜（蓝宝石玻璃）</text>
           <ellipse cx="145" cy="68" rx="84" ry="16" fill="none" stroke="#e2e8f0" stroke-width="3" />
           <rect x="231" y="61" width="16" height="14" rx="3" fill="#e2e8f0" />
-          <text x="255" y="72" fill="#cbd5e1" font-size="12">中壳 + 表冠 / 表带</text>
+          <text x="255" y="72" fill="#cbd5e1" font-size="12">中壳 + 表耳 / 表冠 / 表带 / 表扣</text>
           <ellipse cx="145" cy="106" rx="72" ry="14" fill="#475569" stroke="#94a3b8" stroke-width="1.5" />
           <circle cx="122" cy="108" r="14" fill="none" stroke="#f59e0b" stroke-width="2.5" />
           <circle cx="122" cy="108" r="6" fill="none" stroke="#38bdf8" stroke-width="1.8" />
@@ -711,7 +722,7 @@ onMounted(() => {
       </div>
     </div>
     <div v-else class="part-inspector-empty">
-      点击三维模型中的任意部位或上方十个部件按钮，即可高亮观察对应位置并查看结构讲解。
+      点击三维模型中的任意部位或上方十二个部件按钮，即可开启高对比度透视高亮并查看结构讲解。
     </div>
 
     <!-- 简化教学模型边界说明 -->
