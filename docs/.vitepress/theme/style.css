@@ -1,0 +1,80 @@
+:root {
+  --vp-font-family-base: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB",
+    "Microsoft YaHei", "Noto Sans CJK SC", "Segoe UI", Roboto, sans-serif;
+  --vp-font-family-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --vp-c-brand-1: #1d4ed8;
+  --vp-c-brand-2: #2563eb;
+  --vp-c-brand-3: #1e40af;
+  --vp-c-brand-soft: rgba(37, 99, 235, 0.12);
+}
+
+.dark {
+  --vp-c-brand-1: #60a5fa;
+  --vp-c-brand-2: #3b82f6;
+  --vp-c-brand-3: #2563eb;
+  --vp-c-brand-soft: rgba(96, 165, 250, 0.16);
+}
+
+/* 防止整页意外横向溢出，保证手机端 375px / 390px / 430px 稳定阅读 */
+html,
+body {
+  overflow-x: clip;
+}
+
+/* 正文舒适行距与字号 */
+.vp-doc p,
+.vp-doc li {
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+.vp-doc h2 {
+  margin-top: 36px;
+  padding-top: 20px;
+}
+
+.vp-doc h3 {
+  margin-top: 26px;
+}
+
+/* 宽表格在自身容器内横向滚动，不撑破手机屏幕 */
+.vp-doc table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.vp-doc th,
+.vp-doc td {
+  white-space: nowrap;
+  padding: 10px 14px;
+}
+
+.vp-doc td.wrap-cell,
+.vp-doc table td:last-child {
+  white-space: normal;
+  min-width: 180px;
+}
+
+@media (max-width: 640px) {
+  .VPDoc {
+    padding: 20px 16px 64px !important;
+  }
+
+  .vp-doc h1 {
+    font-size: 24px;
+    line-height: 1.35;
+  }
+
+  .vp-doc h2 {
+    font-size: 20px;
+    margin-top: 28px;
+  }
+
+  .vp-doc h3 {
+    font-size: 17px;
+  }
+}
