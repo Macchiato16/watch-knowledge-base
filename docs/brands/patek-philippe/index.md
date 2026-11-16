@@ -157,7 +157,12 @@
 
 ## 下一步学习
 
-掌握品牌历史、PP 印记与五大系列轮廓后，请继续按顺序阅读百达翡丽的三篇基础必修专章：
+掌握品牌历史、PP 印记与五大系列轮廓后，请继续按顺序阅读百达翡丽的三篇基础必修专章与看图识表对比模块：
 - 下一篇：**[百达翡丽品牌材质](/brands/patek-philippe/materials)**（深入百达翡丽材质尾缀字母规律、贵金属配比与铂金 6 点位真钻暗记）
 - 进阶必读：**[百达翡丽品牌工艺](/brands/patek-philippe/craftsmanship)**（掌握 PP 印记整表精修标准、壳链刀锋倒角、大明火珐琅 `EMAIL` 与二手品相防坑红线）
 - 编码实战：**[百达翡丽型号解读](/brands/patek-philippe/reference-guide)**（彻底拆解 4 位/5 位数字型号与 `/1A`、`/200`、`/1300A`、`G-001` 等后缀编码含义）
+- **看图识表总纲与关联型号对比（3秒视觉锚点定位器） →**：**[进入 24 款运动表看图识表总纲](/brands/patek-philippe/comparisons/)**，内含交互式特征漏斗与四大高频易混组深度对比：
+  - [鹦鹉螺与方形基础款五强对比（`5711 / 5811 / 5810 / 5821 / 7128`）](/brands/patek-philippe/comparisons/nautilus-three-hand)
+  - [鹦鹉螺与方形六大复杂款对比（`5712 / 5726 / 5980 / 5990 / 5740 / 5822`）](/brands/patek-philippe/comparisons/nautilus-complications)
+  - [男款手雷五虎特征锚点对比（`5167 / 5168 / 5164 / 5261 / 5968`）](/brands/patek-philippe/comparisons/aquanaut-men-lineup)
+  - [女款鹦鹉螺与女款手雷防错价对比（`7010 / 7118`、`5067-5069` vs `5267-5269`）](/brands/patek-philippe/comparisons/ladies-nautilus-aquanaut)
