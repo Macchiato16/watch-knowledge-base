@@ -60,25 +60,32 @@ export default defineConfig({
               collapsed: false,
               items: [
                 {
-                  text: '基本认知',
+                  text: '基础功能',
                   collapsed: false,
                   items: [
                     { text: '日期', link: '/general/functions/basic/date' },
-                    { text: '计时', link: '/general/functions/basic/chronograph' },
-                    { text: '年历', link: '/general/functions/basic/annual-calendar' },
-                    { text: '动力存储', link: '/general/functions/basic/power-reserve' },
-                    { text: '双时区', link: '/general/functions/basic/dual-time' }
+                    { text: '动力存储', link: '/general/functions/basic/power-reserve' }
                   ]
                 },
                 {
-                  text: '深入理解',
+                  text: '实用复杂功能',
                   collapsed: false,
                   items: [
-                    { text: '万年历', link: '/general/functions/advanced/perpetual-calendar' },
-                    { text: '三问', link: '/general/functions/advanced/minute-repeater' },
-                    { text: '双秒追针计时', link: '/general/functions/advanced/split-seconds' },
-                    { text: '陀飞轮', link: '/general/functions/advanced/tourbillon' },
-                    { text: '天文星象', link: '/general/functions/advanced/astronomical/' }
+                    { text: '双时区', link: '/general/functions/complications/dual-time' },
+                    { text: '计时', link: '/general/functions/complications/chronograph' },
+                    { text: '飞返计时', link: '/general/functions/complications/flyback-chronograph' },
+                    { text: '年历', link: '/general/functions/complications/annual-calendar' }
+                  ]
+                },
+                {
+                  text: '超级复杂功能',
+                  collapsed: false,
+                  items: [
+                    { text: '万年历', link: '/general/functions/grand-complications/perpetual-calendar' },
+                    { text: '双秒追针计时', link: '/general/functions/grand-complications/split-seconds' },
+                    { text: '陀飞轮', link: '/general/functions/grand-complications/tourbillon' },
+                    { text: '三问', link: '/general/functions/grand-complications/minute-repeater' },
+                    { text: '天文星象', link: '/general/functions/grand-complications/astronomical/' }
                   ]
                 }
               ]

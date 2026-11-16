@@ -4,7 +4,7 @@ import PerpetualCalendarAnim from '../../../.vitepress/theme/components/animatio
 
 # 万年历
 
-**万年历（Perpetual Calendar，常简称为 QP，源自法语 *Quantième Perpétuel*）** 与三问、陀飞轮并称为传统高级制表的“三大超级复杂功能”。在理解了 [年历](/general/functions/basic/annual-calendar) 能够自动区分 30 天与 31 天大小月之后，万年历更进一步，将机械记忆周期从“1 年”拉长到“4 年”，连同平年 2 月 28 天与闰年 2 月 29 天的变化一并纳入机械计算之中。
+**万年历（Perpetual Calendar，常简称为 QP，源自法语 *Quantième Perpétuel*）** 与三问、陀飞轮并称为传统高级制表的“三大超级复杂功能”。在理解了 [年历](/general/functions/complications/annual-calendar) 能够自动区分 30 天与 31 天大小月之后，万年历更进一步，将机械记忆周期从“1 年”拉长到“4 年”，连同平年 2 月 28 天与闰年 2 月 29 天的变化一并纳入机械计算之中。
 
 ---
 
@@ -15,7 +15,7 @@ import PerpetualCalendarAnim from '../../../.vitepress/theme/components/animatio
 1. **大小月交替**：1、3、5、7、8、10、12 月为 31 天；4、6、9、11 月为 30 天。
 2. **四年一闰的 2 月变动**：平年 2 月只有 28 天，每 4 年出现一次闰年，2 月变为 29 天。
 
-[年历](/general/functions/basic/annual-calendar) 机芯只按“12 个月”循环，默认 2 月也有 30 天，因此每年 3 月 1 日必须手动调校一次；而**万年历机芯内置了 48 个月（4 年）的完整机械记忆程序**，只要保持正常走时不停表，就能自动识别大小月与平闰年 2 月，在月末午夜精准跨跳至次月 1 日。
+[年历](/general/functions/complications/annual-calendar) 机芯只按“12 个月”循环，默认 2 月也有 30 天，因此每年 3 月 1 日必须手动调校一次；而**万年历机芯内置了 48 个月（4 年）的完整机械记忆程序**，只要保持正常走时不停表，就能自动识别大小月与平闰年 2 月，在月末午夜精准跨跳至次月 1 日。
 
 > [!IMPORTANT] 严谨认知：2100 年为什么还是要调一次？
 > 传统机械万年历遵循的是“每 4 年必有一次闰年”的 48 个月机械周期，但公历历法还有一条更严格的规则：**“整百年不闰，逢 400 年才闰”**。
