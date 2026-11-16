@@ -43,13 +43,61 @@ export default defineConfig({
           ]
         },
         {
-          text: '百达翡丽（Patek Philippe）',
+          text: '百达翡丽 · 基础必修',
           collapsed: false,
           items: [
             { text: '品牌导览与系列全览', link: '/brands/patek-philippe/' },
             { text: '品牌材质', link: '/brands/patek-philippe/materials' },
             { text: '品牌工艺', link: '/brands/patek-philippe/craftsmanship' },
             { text: '型号解读', link: '/brands/patek-philippe/reference-guide' }
+          ]
+        },
+        {
+          text: '百达翡丽 · Nautilus（鹦鹉螺）',
+          collapsed: false,
+          items: [
+            { text: '5711 · 经典大三针停产热门', link: '/brands/patek-philippe/nautilus/5711' },
+            { text: '5811 · 5711 白金继任款', link: '/brands/patek-philippe/nautilus/5811' },
+            { text: '5810 · 50周年纪念款', link: '/brands/patek-philippe/nautilus/5810' },
+            { text: '5712 · 月相动力存储', link: '/brands/patek-philippe/nautilus/5712' },
+            { text: '5726 · 年历月相款', link: '/brands/patek-philippe/nautilus/5726' },
+            { text: '5980 · 飞返计时', link: '/brands/patek-philippe/nautilus/5980' },
+            { text: '5990 · 双时区飞返计时', link: '/brands/patek-philippe/nautilus/5990' },
+            { text: '5740 · 超薄万年历', link: '/brands/patek-philippe/nautilus/5740' },
+            { text: '7010 · 女款石英钻圈', link: '/brands/patek-philippe/nautilus/7010' },
+            { text: '7118 · 女款自动机械', link: '/brands/patek-philippe/nautilus/7118' }
+          ]
+        },
+        {
+          text: '百达翡丽 · Cubitus（方形鹦鹉螺）',
+          collapsed: false,
+          items: [
+            { text: '5821 · 45mm 方形大三针', link: '/brands/patek-philippe/cubitus/5821' },
+            { text: '5822 · 45mm 瞬跳大日历月相', link: '/brands/patek-philippe/cubitus/5822' },
+            { text: '7128 · 40mm 中号/女款', link: '/brands/patek-philippe/cubitus/7128' }
+          ]
+        },
+        {
+          text: '百达翡丽 · 男款手雷（Aquanaut）',
+          collapsed: false,
+          items: [
+            { text: '5167 · 40.8mm 经典大三针', link: '/brands/patek-philippe/aquanaut/5167' },
+            { text: '5168 · 42.2mm 白金 Jumbo', link: '/brands/patek-philippe/aquanaut/5168' },
+            { text: '5164 · Travel Time 双时区', link: '/brands/patek-philippe/aquanaut/5164' },
+            { text: '5261 · 39.9mm 年历月相', link: '/brands/patek-philippe/aquanaut/5261' },
+            { text: '5968 · 42.2mm 飞返计时', link: '/brands/patek-philippe/aquanaut/5968' }
+          ]
+        },
+        {
+          text: '百达翡丽 · 女款手雷（Aquanaut Luce）',
+          collapsed: false,
+          items: [
+            { text: '5067 · 35.6mm 经典精钢石英', link: '/brands/patek-philippe/aquanaut/5067' },
+            { text: '5068 · 35.6mm 玫瑰金机械', link: '/brands/patek-philippe/aquanaut/5068' },
+            { text: '5069 · 35.6mm 白金机械', link: '/brands/patek-philippe/aquanaut/5069' },
+            { text: '5267 · 38.8mm 现代精钢石英', link: '/brands/patek-philippe/aquanaut/5267' },
+            { text: '5268 · 38.8mm 现代贵金属机械', link: '/brands/patek-philippe/aquanaut/5268' },
+            { text: '5269 · 38.8mm 无侧键双时区', link: '/brands/patek-philippe/aquanaut/5269' }
           ]
         }
       ],

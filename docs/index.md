@@ -17,7 +17,7 @@
    - [腕表行业生态](/general/ecosystem/)：理解品牌定位、一二级市场流通与二手业务的关系。
 2. **品牌知识（结合核心业务深入）**
    - 先阅读 [品牌知识导览](/brands/)，了解公司以 **百达翡丽（Patek Philippe）**、**理查米尔（Richard Mille）** 为核心重点，兼顾 **劳力士（Rolex）**、少量涉及 **爱彼（Audemars Piguet）** 的业务侧重阶梯与统一学习路径。
-   - **百达翡丽基础专章（已上线）**：[百达翡丽品牌导览](/brands/patek-philippe/) → [品牌材质](/brands/patek-philippe/materials) → [品牌工艺](/brands/patek-philippe/craftsmanship) → [型号解读](/brands/patek-philippe/reference-guide)（热门系列具体腕表与关联对比后续按需补充）。
+   - **百达翡丽基础专章与热门系列（已上线）**：[百达翡丽品牌导览](/brands/patek-philippe/) → [品牌材质](/brands/patek-philippe/materials) → [品牌工艺](/brands/patek-philippe/craftsmanship) → [型号解读](/brands/patek-philippe/reference-guide)，以及鹦鹉螺（Nautilus，如 [5711](/brands/patek-philippe/nautilus/5711) / [5811](/brands/patek-philippe/nautilus/5811) / [5810](/brands/patek-philippe/nautilus/5810) / [5712](/brands/patek-philippe/nautilus/5712)）、方形鹦鹉螺（Cubitus，如 [5821](/brands/patek-philippe/cubitus/5821) / [5822](/brands/patek-philippe/cubitus/5822)）与男女款手雷（Aquanaut，如 [5167](/brands/patek-philippe/aquanaut/5167) / [5164](/brands/patek-philippe/aquanaut/5164) / [5268](/brands/patek-philippe/aquanaut/5268)）共 24 款核心型号专章。
 
 ## 阅读约定
 

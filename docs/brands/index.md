@@ -41,7 +41,7 @@
 
 | 品牌 | 业务侧重 | 规划系列／教学分组范围 | 品牌通用章节与直达入口 |
 | --- | --- | --- | --- |
-| **百达翡丽（Patek Philippe）** | **核心重点** | Nautilus（鹦鹉螺）、Aquanaut（手雷）、Cubitus（方形运动系列）、复杂功能时计、超级复杂功能时计 | [百达翡丽品牌导览](/brands/patek-philippe/) · [品牌材质](/brands/patek-philippe/materials) · [品牌工艺](/brands/patek-philippe/craftsmanship) · [型号解读](/brands/patek-philippe/reference-guide)<br>*(热门系列具体表款与关联对比后续按需补充)* |
+| **百达翡丽（Patek Philippe）** | **核心重点** | Nautilus（鹦鹉螺）、Aquanaut（手雷）、Cubitus（方形运动系列）、复杂功能时计、超级复杂功能时计 | [百达翡丽品牌导览](/brands/patek-philippe/) · [品牌材质](/brands/patek-philippe/materials) · [品牌工艺](/brands/patek-philippe/craftsmanship) · [型号解读](/brands/patek-philippe/reference-guide)<br>已上线 24 款核心型号专章：鹦鹉螺（如 [5711](/brands/patek-philippe/nautilus/5711) / [5811](/brands/patek-philippe/nautilus/5811) / [5810](/brands/patek-philippe/nautilus/5810) / [5712](/brands/patek-philippe/nautilus/5712) / [5740](/brands/patek-philippe/nautilus/5740)）、方形鹦鹉螺 Cubitus（[5821](/brands/patek-philippe/cubitus/5821) / [5822](/brands/patek-philippe/cubitus/5822) / [7128](/brands/patek-philippe/cubitus/7128)）及男女款手雷（如 [5167](/brands/patek-philippe/aquanaut/5167) / [5164](/brands/patek-philippe/aquanaut/5164) / [5261](/brands/patek-philippe/aquanaut/5261) / [5267](/brands/patek-philippe/aquanaut/5267) / [5268](/brands/patek-philippe/aquanaut/5268)） |
 | **理查米尔（Richard Mille）** | **核心重点** | 07、35、55、65、67、72 | 品牌导览、品牌材质、品牌工艺、型号解读、关联型号与对比记忆 *(待后续阶段补充)* |
 | **劳力士（Rolex）** | **流通基石** | 迪通拿、星期日历、日志、潜航者、格林尼治Ⅱ、游艇名仕 | 品牌导览、品牌材质、品牌工艺、型号解读、表带类型、关联型号与对比记忆 *(待后续阶段补充)* |
 | **爱彼（Audemars Piguet）** | **少量涉及** | 皇家橡树、皇家橡树离岸型 | 品牌导览、品牌材质、品牌工艺、型号解读、关联型号与对比记忆 *(待后续阶段补充)* |

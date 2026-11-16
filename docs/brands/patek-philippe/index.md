@@ -1,6 +1,6 @@
 # 百达翡丽品牌导览与热门系列全览
 
-**百达翡丽（Patek Philippe）** 是公司二手业务的核心重点品牌之一。本章先建立品牌级的基础认知与五大核心系列的第一眼辨识框架，暂不深入单个具体型号的参数与配置变种，帮助你先看懂“百达翡丽凭什么站在传统高级制表金字塔尖”以及“收到一只百达翡丽时该如何快速归类与核查基础附件”。
+**百达翡丽（Patek Philippe）** 是公司二手业务的核心重点品牌之一。本章先建立品牌级的基础认知与五大核心系列的第一眼辨识框架，帮助你先看懂“百达翡丽凭什么站在传统高级制表金字塔尖”以及“收到一只百达翡丽时该如何快速归类与核查基础附件”；各热门运动系列的具体单表型号参数、配置变种与二手验表细节，可直接从下方对应系列的直达入口或左侧目录深入学习。
 
 ---
 
@@ -59,6 +59,11 @@
 
 *图：Nautilus（鹦鹉螺）标志性视觉特征——圆润八角形表圈、左右对称“护肩耳朵”、水平横向浮雕条纹盘面与一体式金属链带*
 
+- **已上线核心型号专章直达（10 款）**：
+  - 男款经典与周年款：[Ref. 5711（传奇大三针）](/brands/patek-philippe/nautilus/5711) · [Ref. 5811（41mm 白金继任）](/brands/patek-philippe/nautilus/5811) · [Ref. 5810（50 周年超薄双针）](/brands/patek-philippe/nautilus/5810) · [Ref. 5712（月相动力存储）](/brands/patek-philippe/nautilus/5712)
+  - 男款复杂功能：[Ref. 5726（年历月相）](/brands/patek-philippe/nautilus/5726) · [Ref. 5980（飞返计时）](/brands/patek-philippe/nautilus/5980) · [Ref. 5990（双时区飞返计时）](/brands/patek-philippe/nautilus/5990) · [Ref. 5740（超薄万年历）](/brands/patek-philippe/nautilus/5740)
+  - 女款系列：[Ref. 7010（32mm 石英钻圈）](/brands/patek-philippe/nautilus/7010) · [Ref. 7118（35.2mm 自动机械）](/brands/patek-philippe/nautilus/7118)
+
 ### 2. Aquanaut（手雷）
 
 - **诞生背景**：1997 年诞生，定位比鹦鹉螺更现代、休闲与年轻化，是百达翡丽首次在主流男表中大规模启用复合材料橡胶表带的里程碑系列。
@@ -71,6 +76,10 @@
 
 *图：Aquanaut（手雷）典型特征——圆润八角表圈、无左侧外凸护肩的常规表耳、棋盘经纬格纹“手雷”浮雕表盘与 Tropical 复合材料橡胶表带*
 
+- **已上线核心型号专章直达（11 款）**：
+  - 男款手雷（5 款）：[Ref. 5167（40.8mm 经典大三针）](/brands/patek-philippe/aquanaut/5167) · [Ref. 5168（42.2mm 白金 Jumbo）](/brands/patek-philippe/aquanaut/5168) · [Ref. 5164（Travel Time 双时区）](/brands/patek-philippe/aquanaut/5164) · [Ref. 5261（39.9mm 年历月相）](/brands/patek-philippe/aquanaut/5261) · [Ref. 5968（42.2mm 飞返计时）](/brands/patek-philippe/aquanaut/5968)
+  - 女款手雷 Aquanaut Luce（6 款）：[Ref. 5067（35.6mm 精钢石英）](/brands/patek-philippe/aquanaut/5067) · [Ref. 5068（35.6mm 玫瑰金机械）](/brands/patek-philippe/aquanaut/5068) · [Ref. 5069（35.6mm 白金机械）](/brands/patek-philippe/aquanaut/5069) · [Ref. 5267（38.8mm 精钢石英）](/brands/patek-philippe/aquanaut/5267) · [Ref. 5268（38.8mm 贵金属机械）](/brands/patek-philippe/aquanaut/5268) · [Ref. 5269（38.8mm 无侧键双时区）](/brands/patek-philippe/aquanaut/5269)
+
 ### 3. Cubitus（方形运动系列）
 
 - **诞生背景**：**2024 年 10 月正式发布**，是百达翡丽继 1999 年 Twenty~4 之后时隔 25 年推出的首个全新腕表系列（也是继 1997 年 Aquanaut 之后时隔 27 年再度开辟的全新现代运动系列），也是斯登家族新一代掌门人主导下的重磅产品线。
@@ -82,6 +91,9 @@
 ![百达翡丽 Cubitus（方形运动系列）精钢绿盘腕表](/images/brands/patek-philippe/overview/patek-cubitus-5821.jpg)
 
 *图：2024 年发布的 Cubitus（方形运动系列）精钢橄榄绿盘腕表——圆角方形表壳、两侧护肩耳、水平横向条纹盘面与一体式链带清晰可辨*
+
+- **已上线核心型号专章直达（3 款）**：
+  - [Ref. 5821（45mm 方形大三针）](/brands/patek-philippe/cubitus/5821) · [Ref. 5822（45mm 瞬跳大日历月相）](/brands/patek-philippe/cubitus/5822) · [Ref. 7128（40mm 中号/女款）](/brands/patek-philippe/cubitus/7128)
 
 ### 4. 复杂功能时计（Complications）
 
