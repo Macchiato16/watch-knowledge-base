@@ -15,8 +15,8 @@
      - **超级复杂功能**：[万年历](/general/functions/grand-complications/perpetual-calendar)、[双秒追针计时](/general/functions/grand-complications/split-seconds)、[陀飞轮](/general/functions/grand-complications/tourbillon)、[三问](/general/functions/grand-complications/minute-repeater)、[天文星象](/general/functions/grand-complications/astronomical/)。
    - [腕表行业生态](/general/ecosystem/)：理解品牌定位、一二级市场流通与二手业务的关系。
 2. **品牌知识（结合核心业务深入）**
-   - 围绕公司业务重心，以 **百达翡丽（Patek Philippe）**、**理查米尔（Richard Mille）** 为核心重点，兼顾 **劳力士（Rolex）**，少量涉及 **爱彼（Audemars Piguet）**。
-   - 按各品牌的「品牌材质」「型号解读」「热门系列与具体腕表」「关联型号与对比记忆」逐步展开。
+   - 先阅读 [品牌知识导览](/brands/)，了解公司以 **百达翡丽（Patek Philippe）**、**理查米尔（Richard Mille）** 为核心重点，兼顾 **劳力士（Rolex）**、少量涉及 **爱彼（Audemars Piguet）** 的业务侧重阶梯与统一学习路径。
+   - **百达翡丽基础专章（已上线）**：[百达翡丽品牌导览](/brands/patek-philippe/) → [品牌材质](/brands/patek-philippe/materials) → [型号解读](/brands/patek-philippe/reference-guide)（热门系列具体腕表与关联对比后续按需补充）。
 
 ## 阅读约定
 

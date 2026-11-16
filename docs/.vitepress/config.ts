@@ -39,7 +39,16 @@ export default defineConfig({
         {
           text: '品牌知识',
           items: [
-            { text: '品牌导览（待补充）', link: '/brands/' }
+            { text: '品牌知识导览', link: '/brands/' }
+          ]
+        },
+        {
+          text: '百达翡丽（Patek Philippe）',
+          collapsed: false,
+          items: [
+            { text: '品牌导览与系列全览', link: '/brands/patek-philippe/' },
+            { text: '品牌材质', link: '/brands/patek-philippe/materials' },
+            { text: '型号解读', link: '/brands/patek-philippe/reference-guide' }
           ]
         }
       ],
