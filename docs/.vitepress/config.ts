@@ -1,6 +1,7 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
+  base: process.env.VITEPRESS_BASE || '/',
   lang: 'zh-CN',
   title: '腕表业务知识库',
   description: '面向全员的二手腕表业务系统学习与日常查阅知识库',

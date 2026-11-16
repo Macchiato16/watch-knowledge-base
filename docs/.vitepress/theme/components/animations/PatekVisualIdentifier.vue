@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
+import { withBase } from 'vitepress'
 
 type CaseGroupId = 'all' | 'nautilus-men' | 'nautilus-ladies' | 'cubitus' | 'aquanaut'
 type DialFeatureId =
@@ -462,7 +463,7 @@ function resetFilters() {
           <p class="pp-vi-text">{{ item.confusion }}</p>
         </div>
         <div class="pp-vi-card-foot">
-          <a :href="item.href" class="pp-vi-link">进入型号专章 →</a>
+          <a :href="withBase(item.href)" class="pp-vi-link">进入型号专章 →</a>
         </div>
       </article>
     </div>
