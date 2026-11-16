@@ -53,17 +53,6 @@ export default defineConfig({
           ]
         },
         {
-          text: '百达翡丽 · 关联型号与对比记忆',
-          collapsed: false,
-          items: [
-            { text: '看图识表总纲（24款定位器）', link: '/brands/patek-philippe/comparisons/' },
-            { text: '鹦鹉螺与方形基础五强对比', link: '/brands/patek-philippe/comparisons/nautilus-three-hand' },
-            { text: '鹦鹉螺与方形六大复杂款对比', link: '/brands/patek-philippe/comparisons/nautilus-complications' },
-            { text: '男款手雷五虎特征锚点对比', link: '/brands/patek-philippe/comparisons/aquanaut-men-lineup' },
-            { text: '女款鹦鹉螺与女手雷防错价对比', link: '/brands/patek-philippe/comparisons/ladies-nautilus-aquanaut' }
-          ]
-        },
-        {
           text: '百达翡丽 · Nautilus（鹦鹉螺）',
           collapsed: false,
           items: [
@@ -109,6 +98,17 @@ export default defineConfig({
             { text: '5267 · 38.8mm 现代精钢石英', link: '/brands/patek-philippe/aquanaut/5267' },
             { text: '5268 · 38.8mm 现代贵金属机械', link: '/brands/patek-philippe/aquanaut/5268' },
             { text: '5269 · 38.8mm 无侧键双时区', link: '/brands/patek-philippe/aquanaut/5269' }
+          ]
+        },
+        {
+          text: '百达翡丽 · 关联型号与对比记忆',
+          collapsed: false,
+          items: [
+            { text: '看图识表总纲（24款定位器）', link: '/brands/patek-philippe/comparisons/' },
+            { text: '鹦鹉螺与方形基础五强对比', link: '/brands/patek-philippe/comparisons/nautilus-three-hand' },
+            { text: '鹦鹉螺与方形六大复杂款对比', link: '/brands/patek-philippe/comparisons/nautilus-complications' },
+            { text: '男款手雷五虎特征锚点对比', link: '/brands/patek-philippe/comparisons/aquanaut-men-lineup' },
+            { text: '女款鹦鹉螺与女手雷防错价对比', link: '/brands/patek-philippe/comparisons/ladies-nautilus-aquanaut' }
           ]
         }
       ],
