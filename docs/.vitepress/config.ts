@@ -48,6 +48,7 @@ export default defineConfig({
           items: [
             { text: '品牌导览与系列全览', link: '/brands/patek-philippe/' },
             { text: '品牌材质', link: '/brands/patek-philippe/materials' },
+            { text: '品牌工艺', link: '/brands/patek-philippe/craftsmanship' },
             { text: '型号解读', link: '/brands/patek-philippe/reference-guide' }
           ]
         }
@@ -74,6 +75,17 @@ export default defineConfig({
                 { text: '玫瑰金', link: '/general/materials/rose-gold' },
                 { text: '白金', link: '/general/materials/white-gold' },
                 { text: '铂金', link: '/general/materials/platinum' }
+              ]
+            },
+            {
+              text: '腕表工艺',
+              collapsed: false,
+              items: [
+                { text: '工艺总览与流派对比', link: '/general/craftsmanship/' },
+                { text: '表壳加工与表面打磨', link: '/general/craftsmanship/case-finishing' },
+                { text: '表盘制作与艺术装饰', link: '/general/craftsmanship/dial-crafts' },
+                { text: '机芯修饰与现代表面工程', link: '/general/craftsmanship/movement-finishing' },
+                { text: '宝石镶嵌工艺', link: '/general/craftsmanship/gem-setting' }
               ]
             },
             {

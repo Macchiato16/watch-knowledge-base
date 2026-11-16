@@ -9,6 +9,7 @@
 1. **通用知识（建立基础框架）**
    - [认识腕表结构](/general/structure/)：通过三维交互演示与图文对应，掌握表壳、机芯及关键运动部件的名称、位置与作用。
    - **腕表材质**：先读 [材质总览与对比](/general/materials/)，再逐一掌握 [精钢](/general/materials/steel)、[陶瓷](/general/materials/ceramic)、[黄金](/general/materials/yellow-gold)、[玫瑰金](/general/materials/rose-gold)、[白金](/general/materials/white-gold)、[铂金](/general/materials/platinum) 的物理化学性质与消费心理差异。
+   - **腕表工艺**：先看 [工艺总览与流派对比](/general/craftsmanship/)（拉通传统手工、精密工业与理查米尔先锋微工程三大流派），再深入 [表壳加工与表面打磨](/general/craftsmanship/case-finishing)、[表盘制作与艺术装饰](/general/craftsmanship/dial-crafts)、[机芯修饰与现代表面工程](/general/craftsmanship/movement-finishing)、[宝石镶嵌工艺](/general/craftsmanship/gem-setting)。
    - **腕表功能**：按功能复杂度分为三级——
      - **基础功能**：[日期](/general/functions/basic/date)、[动力存储](/general/functions/basic/power-reserve)；
      - **实用复杂功能**：[双时区](/general/functions/complications/dual-time)、[计时](/general/functions/complications/chronograph)、[飞返计时](/general/functions/complications/flyback-chronograph)、[年历](/general/functions/complications/annual-calendar)；
@@ -16,7 +17,7 @@
    - [腕表行业生态](/general/ecosystem/)：理解品牌定位、一二级市场流通与二手业务的关系。
 2. **品牌知识（结合核心业务深入）**
    - 先阅读 [品牌知识导览](/brands/)，了解公司以 **百达翡丽（Patek Philippe）**、**理查米尔（Richard Mille）** 为核心重点，兼顾 **劳力士（Rolex）**、少量涉及 **爱彼（Audemars Piguet）** 的业务侧重阶梯与统一学习路径。
-   - **百达翡丽基础专章（已上线）**：[百达翡丽品牌导览](/brands/patek-philippe/) → [品牌材质](/brands/patek-philippe/materials) → [型号解读](/brands/patek-philippe/reference-guide)（热门系列具体腕表与关联对比后续按需补充）。
+   - **百达翡丽基础专章（已上线）**：[百达翡丽品牌导览](/brands/patek-philippe/) → [品牌材质](/brands/patek-philippe/materials) → [品牌工艺](/brands/patek-philippe/craftsmanship) → [型号解读](/brands/patek-philippe/reference-guide)（热门系列具体腕表与关联对比后续按需补充）。
 
 ## 阅读约定
 
