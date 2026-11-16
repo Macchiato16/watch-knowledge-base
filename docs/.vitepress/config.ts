@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import markdownItCjkFriendly from 'markdown-it-cjk-friendly'
 
 export default defineConfig({
   base: process.env.VITEPRESS_BASE || '/',
@@ -7,6 +8,12 @@ export default defineConfig({
   description: '面向全员的二手腕表业务系统学习与日常查阅知识库',
   lastUpdated: true,
   cleanUrls: true,
+
+  markdown: {
+    config(md) {
+      md.use(markdownItCjkFriendly)
+    }
+  },
 
   head: [
     ['meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0, viewport-fit=cover' }]
@@ -106,10 +113,14 @@ export default defineConfig({
           collapsed: false,
           items: [
             { text: '看图识表总纲（24款定位器）', link: '/brands/patek-philippe/comparisons/' },
-            { text: '鹦鹉螺与方形基础五强对比', link: '/brands/patek-philippe/comparisons/nautilus-three-hand' },
-            { text: '鹦鹉螺与方形六大复杂款对比', link: '/brands/patek-philippe/comparisons/nautilus-complications' },
-            { text: '男款手雷五虎特征锚点对比', link: '/brands/patek-philippe/comparisons/aquanaut-men-lineup' },
-            { text: '女款鹦鹉螺与女手雷防错价对比', link: '/brands/patek-philippe/comparisons/ladies-nautilus-aquanaut' }
+            { text: '5711 vs 5811 vs 5810 · 鹦鹉螺极简三代', link: '/brands/patek-philippe/comparisons/nautilus-5711-5811-5810' },
+            { text: '5726 vs 5740 · 年历与万年历月相双雄', link: '/brands/patek-philippe/comparisons/nautilus-5726-5740' },
+            { text: '5980 vs 5990 · 鹦鹉螺飞返计时两代', link: '/brands/patek-philippe/comparisons/nautilus-5980-5990' },
+            { text: '7010 vs 7118 · 女款鹦鹉螺双姝', link: '/brands/patek-philippe/comparisons/nautilus-ladies-7010-7118' },
+            { text: '5821 vs 7128 · 方形大三针大小号', link: '/brands/patek-philippe/comparisons/cubitus-5821-7128' },
+            { text: '5167 vs 5168 · 男款大三针手雷双雄', link: '/brands/patek-philippe/comparisons/aquanaut-5167-5168' },
+            { text: '5067 vs 5068 vs 5069 · 初代女手雷防错价', link: '/brands/patek-philippe/comparisons/aquanaut-luce-5067-5068-5069' },
+            { text: '5267 vs 5268 vs 5269 · 现代女手雷与断代', link: '/brands/patek-philippe/comparisons/aquanaut-luce-5267-5268-5269' }
           ]
         }
       ],

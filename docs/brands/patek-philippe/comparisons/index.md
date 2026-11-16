@@ -46,7 +46,7 @@ import PatekVisualIdentifier from '../../../.vitepress/theme/components/animatio
 | 男款鹦鹉螺 | `5711` | 40mm 三件式旋入底壳 + 3点日历 + 蝴蝶扣 | 区分 `5811`（41mm 一体壳白金） | [查看 5711 →](/brands/patek-philippe/nautilus/5711) |
 | 男款鹦鹉螺 | `5811` | 41mm 仅 18K 白金蓝盘 + 两件式一体底壳 + 新微调扣 | 勿当 `5711/1A` 钢款报低价 | [查看 5811 →](/brands/patek-philippe/nautilus/5811) |
 | 男款鹦鹉螺 | `5810` | **唯一无秒针、无日历** + 6.9mm 超薄 + 珍珠陀 50 周年刻字 | 勿当 `5711/5811` 大三针 | [查看 5810 →](/brands/patek-philippe/nautilus/5810) |
-| 男款鹦鹉螺 | `5712` | 圆八角壳 + **不对称三小盘**（10点动储/7点月相日历/4点小秒） | 区分方形 `5822P`（12点有大日历） | [查看 5712 →](/brands/patek-philippe/nautilus/5712) |
+| 男款鹦鹉螺 | `5712` | 圆八角壳 + **不对称三小盘**（10点动储/7点月相日历/4点小秒） | 区分带 `/1` 链带与无 `/1` 皮带款 | [查看 5712 →](/brands/patek-philippe/nautilus/5712) |
 | 男款鹦鹉螺 | `5726` | 12点**并排星期/月份双矩形窗** + 6点24小时月相 + 无凸键 | 区分 `5740`（无双矩形窗且极薄） | [查看 5726 →](/brands/patek-philippe/nautilus/5726) |
 | 男款鹦鹉螺 | `5980` | **左耳完整**仅右侧双计时键 + 6点单个“盘中盘” + 3点日历 | 区分 `5990`（左右共四键） | [查看 5980 →](/brands/patek-philippe/nautilus/5980) |
 | 男款鹦鹉螺 | `5990` | **左耳裂开变上下双键 + 右侧双键（共四键）** + 12点指针日历 | 区分 `5980`（仅右侧两键） | [查看 5990 →](/brands/patek-philippe/nautilus/5990) |
@@ -54,7 +54,7 @@ import PatekVisualIdentifier from '../../../.vitepress/theme/components/animatio
 | 女款鹦鹉螺 | `7010` | 32mm 波浪纹 + **3点日历** + 必带 46 颗钻圈 + 密底石英跳秒 | 区分 `7118`（35.2mm、6点日历机械） | [查看 7010 →](/brands/patek-philippe/nautilus/7010) |
 | 女款鹦鹉螺 | `7118` | 35.2mm 波浪纹 + **6点日历** + 背透自动扫秒（素圈或56钻） | 区分 `7010`（3点日历石英） | [查看 7118 →](/brands/patek-philippe/nautilus/7118) |
 | 方形 Cubitus | `5821` | 45mm 圆角方形 + 仅**精钢绿盘**（/1A）或**间金蓝盘**（/1AR） | 尺寸与配色均与 `7128` 零重叠 | [查看 5821 →](/brands/patek-philippe/cubitus/5821) |
-| 方形 Cubitus | `5822` | 45mm 铂金方形（6点梯钻）+ **12点双窗大日历** + 不对称小盘 | 区分圆壳 `5712`（无大日历） | [查看 5822 →](/brands/patek-philippe/cubitus/5822) |
+| 方形 Cubitus | `5822` | 45mm 铂金方形（6点梯钻）+ **12点双窗大日历** + 不对称小盘 | 方形系列唯一复杂款（核查6点方钻） | [查看 5822 →](/brands/patek-philippe/cubitus/5822) |
 | 方形 Cubitus | `7128` | 40mm 圆角方形 + 仅**全白金蓝灰盘**（/1G）或**全玫瑰金棕盘**（/1R） | 比 `5821` 小 5mm 且全贵金属 | [查看 7128 →](/brands/patek-philippe/cubitus/7128) |
 | 男款手雷 | `5167` | 40.8mm 经典手雷 + 仅精钢黑盘（5167A）与玫瑰金棕盘（5167R） | 区分 `5168G`（42.2mm 白金蓝/绿） | [查看 5167 →](/brands/patek-philippe/aquanaut/5167) |
 | 男款手雷 | `5168` | 42.2mm Jumbo 大手雷 + **18K 白金独占午夜蓝 / 卡其绿盘** | 勿当 `5167A` 精钢报低价 | [查看 5168 →](/brands/patek-philippe/aquanaut/5168) |
@@ -70,11 +70,19 @@ import PatekVisualIdentifier from '../../../.vitepress/theme/components/animatio
 
 ---
 
-## 四、四大高频易混组深度对比入口
+## 四、八大同系列易混款精悍对比直达入口
 
-点击下方对应专题，可查看实拍图对照、细节放大锚点与防错价话术：
+仅在同一系列内部对比真正易撞脸或前后代承接的 2～3 款型号，点击即可查看核心差异表、实拍图对比与一秒切分口诀：
 
-1. **[鹦鹉螺与方形基础款五强对比：`5711` vs `5811` vs `5810` vs `5821` vs `7128` →](/brands/patek-philippe/comparisons/nautilus-three-hand)**
-2. **[鹦鹉螺与方形六大复杂款盘面与按键一眼秒辨：`5712` vs `5726` vs `5980` vs `5990` vs `5740` vs `5822` →](/brands/patek-philippe/comparisons/nautilus-complications)**
-3. **[男款手雷五虎特征锚点与定位对比：`5167` vs `5168` vs `5164` vs `5261` vs `5968` →](/brands/patek-philippe/comparisons/aquanaut-men-lineup)**
-4. **[女款鹦鹉螺与女款手雷八大易混型号防错价终极指南：`7010` vs `7118`、`5067/5068/5069` vs `5267/5268/5269` →](/brands/patek-philippe/comparisons/ladies-nautilus-aquanaut)**
+1. **[鹦鹉螺极简基础三代对比：`5711` vs `5811` vs `5810` →](/brands/patek-philippe/comparisons/nautilus-5711-5811-5810)**
+2. **[鹦鹉螺对称月相双雄对比：年历 `5726` vs 万年历 `5740` →](/brands/patek-philippe/comparisons/nautilus-5726-5740)**
+3. **[鹦鹉螺飞返计时前后代对比：单计时 `5980` vs 双时区计时 `5990` →](/brands/patek-philippe/comparisons/nautilus-5980-5990)**
+4. **[女款鹦鹉螺双姝对比：32mm 石英钻圈 `7010` vs 35.2mm 自动机械 `7118` →](/brands/patek-philippe/comparisons/nautilus-ladies-7010-7118)**
+5. **[Cubitus 方形大三针大小号对比：45mm 大号 `5821` vs 40mm 中号 `7128` →](/brands/patek-philippe/comparisons/cubitus-5821-7128)**
+6. **[男款手雷大三针两代对比：40.8mm 经典 `5167` vs 42.2mm 白金 `5168` →](/brands/patek-philippe/comparisons/aquanaut-5167-5168)**
+7. **[女款手雷老代外露生耳三剑客对比：`5067` vs `5068` vs `5069` →](/brands/patek-philippe/comparisons/aquanaut-luce-5067-5068-5069)**
+8. **[女款手雷新代一体胶带三剑客对比：`5267` vs `5268` vs `5269` →](/brands/patek-philippe/comparisons/aquanaut-luce-5267-5268-5269)**
+
+::: info 为什么没有列出 `5712`、`5822P` 与男款手雷复杂款？
+像圆壳唯一不对称三小盘 `5712`、方壳唯一 12 点双窗大日历 `5822P`，以及盘面按键位置截然不同的男手雷复杂款 `5164 / 5261 / 5968`，自身视觉锚点独一无二、同系并无撞脸款，通过上方特征锚点定位器与速查总表即可一秒认出，无需跨壳型强行混比。
+:::

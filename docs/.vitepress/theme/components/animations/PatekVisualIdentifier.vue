@@ -99,7 +99,7 @@ const watchCatalog: WatchAnchorCard[] = [
     dialFeatures: ['calendar-moonphase'],
     bezelSides: ['plain-no-pusher'],
     anchor: '圆八角表壳配标志性“不对称三小盘”布局：10点动储扇区、7点月相与指针日历同轴、4点偏心小秒盘。',
-    confusion: '易混 5822P（同样不对称布局，但 5822P 为圆角方形表壳且 12 点带双窗大日历）与 5726（对称居中）。',
+    confusion: '鹦鹉螺唯一不对称盘面（一眼区隔对称月相 5726）；重点区分带 /1 链带款与无 /1 皮带款（固定端粒不可互改）。',
     href: '/brands/patek-philippe/nautilus/5712'
   },
   {
@@ -191,7 +191,7 @@ const watchCatalog: WatchAnchorCard[] = [
     dialFeatures: ['calendar-moonphase'],
     bezelSides: ['plain-no-pusher'],
     anchor: '45mm 铂金方形（6点表圈镶梯钻），12点位并排双窗瞬跳大日历 + 7点星期与月相同轴 + 4点半偏心小秒盘。',
-    confusion: '易混 5712（同为不对称小盘，但 5712 是圆八角壳且无 12 点双窗大日历）。',
+    confusion: 'Cubitus 方形系列目前唯一复杂功能款，一眼区隔同门大三针 5821 / 7128；重点核查 6 点位长方钻铂金暗记。',
     href: '/brands/patek-philippe/cubitus/5822'
   },
   {
