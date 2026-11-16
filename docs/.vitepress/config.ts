@@ -54,7 +54,19 @@ export default defineConfig({
           text: '通用知识',
           items: [
             { text: '认识腕表结构', link: '/general/structure/' },
-            { text: '腕表材质', link: '/general/materials/' },
+            {
+              text: '腕表材质',
+              collapsed: false,
+              items: [
+                { text: '材质总览与对比', link: '/general/materials/' },
+                { text: '精钢', link: '/general/materials/steel' },
+                { text: '陶瓷', link: '/general/materials/ceramic' },
+                { text: '黄金', link: '/general/materials/yellow-gold' },
+                { text: '玫瑰金', link: '/general/materials/rose-gold' },
+                { text: '白金', link: '/general/materials/white-gold' },
+                { text: '铂金', link: '/general/materials/platinum' }
+              ]
+            },
             {
               text: '腕表功能',
               collapsed: false,

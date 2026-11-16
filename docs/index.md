@@ -8,7 +8,7 @@
 
 1. **通用知识（建立基础框架）**
    - [认识腕表结构](/general/structure/)：通过三维交互演示与图文对应，掌握表壳、机芯及关键运动部件的名称、位置与作用。
-   - [腕表材质](/general/materials/)：先认识精钢、陶瓷、白金、黄金、玫瑰金、铂金六种常见材质及直观差别。
+   - **腕表材质**：先读 [材质总览与对比](/general/materials/)，再逐一掌握 [精钢](/general/materials/steel)、[陶瓷](/general/materials/ceramic)、[黄金](/general/materials/yellow-gold)、[玫瑰金](/general/materials/rose-gold)、[白金](/general/materials/white-gold)、[铂金](/general/materials/platinum) 的物理化学性质与消费心理差异。
    - **腕表功能**：按功能复杂度分为三级——
      - **基础功能**：[日期](/general/functions/basic/date)、[动力存储](/general/functions/basic/power-reserve)；
      - **实用复杂功能**：[双时区](/general/functions/complications/dual-time)、[计时](/general/functions/complications/chronograph)、[飞返计时](/general/functions/complications/flyback-chronograph)、[年历](/general/functions/complications/annual-calendar)；
