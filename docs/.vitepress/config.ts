@@ -69,6 +69,17 @@ export default defineConfig({
                     { text: '动力存储', link: '/general/functions/basic/power-reserve' },
                     { text: '双时区', link: '/general/functions/basic/dual-time' }
                   ]
+                },
+                {
+                  text: '深入理解',
+                  collapsed: false,
+                  items: [
+                    { text: '万年历', link: '/general/functions/advanced/perpetual-calendar' },
+                    { text: '三问', link: '/general/functions/advanced/minute-repeater' },
+                    { text: '双秒追针计时', link: '/general/functions/advanced/split-seconds' },
+                    { text: '陀飞轮', link: '/general/functions/advanced/tourbillon' },
+                    { text: '天文星象', link: '/general/functions/advanced/astronomical/' }
+                  ]
                 }
               ]
             },
