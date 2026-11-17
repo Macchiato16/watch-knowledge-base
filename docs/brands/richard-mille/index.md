@@ -200,3 +200,4 @@
 - 下一篇：**[理查米尔品牌材质](/brands/richard-mille/materials)**（彻底拆解 Carbon TPT®、Quartz TPT®、ATZ/TZP 陶瓷、五级钛与贵金属复合材料的物理特性与改壳鉴别）
 - 进阶必读：**[理查米尔品牌工艺](/brands/richard-mille/craftsmanship)**（掌握花键螺丝公差、钛桥板手工倒角、雪花镶钻原厂/后镶鉴别与壳体翻新红线）
 - 编码实战：**[理查米尔型号解读](/brands/richard-mille/reference-guide)**（理清 `RM XX-0X` 编号规则、前导零规范、联名后缀与不可仅凭型号判断的边界）
+- 实战进阶：**[看图识表总纲与 7 组对比记忆](/brands/richard-mille/comparisons/)**（通过 14 款 2D 视觉锚点定位器与 7 组高危易混对比，实现 3 秒看图识表防错价）

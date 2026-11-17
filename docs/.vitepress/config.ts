@@ -188,6 +188,20 @@ export default defineConfig({
           items: [
             { text: 'RM 72-01 · 全自产摆动齿轮飞返', link: '/brands/richard-mille/72/rm-72-01' }
           ]
+        },
+        {
+          text: '理查米尔 · 关联型号与对比记忆',
+          collapsed: false,
+          items: [
+            { text: '看图识表总纲（14款定位器）', link: '/brands/richard-mille/comparisons/' },
+            { text: '07-01 vs 07-04 · 女装优雅与超轻运动', link: '/brands/richard-mille/comparisons/07-rm-07-01-vs-07-04' },
+            { text: '011 vs 11-03 vs 11-05 · 大号飞返三代', link: '/brands/richard-mille/comparisons/11-rm-011-vs-11-03-vs-11-05' },
+            { text: '035 vs 35-01 · 手动密底小牛前两代', link: '/brands/richard-mille/comparisons/35-manual-rm-035-vs-35-01' },
+            { text: '35-02 vs 35-03 · 自动透底纳达尔双主力', link: '/brands/richard-mille/comparisons/35-auto-rm-35-02-vs-35-03' },
+            { text: '67-01 vs 67-02 · 超薄酒桶双生花', link: '/brands/richard-mille/comparisons/67-rm-67-01-vs-67-02' },
+            { text: '055 vs 35-01/35-02 · 无侧键镂空三针双王', link: '/brands/richard-mille/comparisons/skeleton-rm-055-vs-35-series' },
+            { text: '11-03 vs 72-01 vs 65-01 · 现代计时三旗舰', link: '/brands/richard-mille/comparisons/chrono-rm-11-03-vs-72-01-vs-65-01' }
+          ]
         }
       ],
       '/': [
