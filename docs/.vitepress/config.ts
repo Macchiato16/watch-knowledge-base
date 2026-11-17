@@ -229,6 +229,66 @@ export default defineConfig({
                 { text: '型号解读', link: '/brands/rolex/reference-guide' },
                 { text: '表带类型', link: '/brands/rolex/bracelets' }
               ]
+            },
+            {
+              text: '宇宙计型迪通拿（Daytona）',
+              collapsed: true,
+              items: [
+                { text: '116500LN · 老款钢壳熊猫/黑钢迪', link: '/brands/rolex/daytona/116500ln' },
+                { text: '126500LN · 新款金属包边钢迪', link: '/brands/rolex/daytona/126500ln' },
+                { text: '116515LN · 老款玫瑰金胶带迪', link: '/brands/rolex/daytona/116515ln' },
+                { text: '116518LN · 老款黄金胶带迪（余文乐）', link: '/brands/rolex/daytona/116518ln' },
+                { text: '126518LN · 新款黄金包边胶带迪', link: '/brands/rolex/daytona/126518ln' },
+                { text: '116505 · 老款全玫瑰金链带迪', link: '/brands/rolex/daytona/116505' },
+                { text: '116508 · 老款全黄金迪（绿金迪）', link: '/brands/rolex/daytona/116508' },
+                { text: '126505 · 新款全玫瑰金链带迪', link: '/brands/rolex/daytona/126505' },
+                { text: '126508 · 新款全黄金链带迪', link: '/brands/rolex/daytona/126508' },
+                { text: '126506 · 新款 950 铂金透底冰蓝迪', link: '/brands/rolex/daytona/126506' },
+                { text: '116595RBOW · 玫瑰金原厂彩虹迪', link: '/brands/rolex/daytona/116595rbow' },
+                { text: '126599RBOW · 新款白金原厂彩虹迪', link: '/brands/rolex/daytona/126599rbow' }
+              ]
+            },
+            {
+              text: '星期日历型（Day-Date）',
+              collapsed: true,
+              items: [
+                { text: '128238 · 36mm 黄金狗牙圈元首表', link: '/brands/rolex/day-date/128238' },
+                { text: '228238 · 40mm 黄金狗牙圈元首表', link: '/brands/rolex/day-date/228238' }
+              ]
+            },
+            {
+              text: '日志型（Datejust）',
+              collapsed: true,
+              items: [
+                { text: '126334 · 41mm 白金钢狗牙圈爆款', link: '/brands/rolex/datejust/126334' }
+              ]
+            },
+            {
+              text: '潜航者型（Submariner）',
+              collapsed: true,
+              items: [
+                { text: '126610LN · 41mm 有历黑水鬼', link: '/brands/rolex/submariner/126610ln' },
+                { text: '126610LV · 41mm 星巴克绿水鬼', link: '/brands/rolex/submariner/126610lv' }
+              ]
+            },
+            {
+              text: '格林尼治型 II（GMT-Master II）',
+              collapsed: true,
+              items: [
+                { text: '126710BLRO · 钢款红蓝百事圈', link: '/brands/rolex/gmt-master-ii/126710blro' },
+                { text: '126710BLNR · 钢款蓝黑国米圈', link: '/brands/rolex/gmt-master-ii/126710blnr' },
+                { text: '126710GRNR · 钢款灰黑皮蛋圈', link: '/brands/rolex/gmt-master-ii/126710grnr' },
+                { text: '126711CHNR · 玫瑰金钢间金沙士圈', link: '/brands/rolex/gmt-master-ii/126711chnr' },
+                { text: '126715CHNR · 全玫瑰金沙士圈', link: '/brands/rolex/gmt-master-ii/126715chnr' },
+                { text: '126720VTNR · 左冠绿黑雪碧圈', link: '/brands/rolex/gmt-master-ii/126720vtnr' }
+              ]
+            },
+            {
+              text: '游艇名仕型（Yacht-Master）',
+              collapsed: true,
+              items: [
+                { text: '126655 · 40mm 玫瑰金哑光陶圈胶带', link: '/brands/rolex/yacht-master/126655' }
+              ]
             }
           ]
         }

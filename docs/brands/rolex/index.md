@@ -62,6 +62,11 @@
   - **Oysterflex 胶带迪（贵金属 + 陶瓷圈 + 橡胶表带）**：`116515LN`（玫瑰金）、`116518LN`（黄金黑盘金眼“余文乐”）、`126518LN`（新款胶带金迪）及白金灰盘“水泥灰”`116519LN` / `126519LN`；
   - **全金与 950 铂金冰蓝迪**：`116505` / `126505`（全玫瑰金）、`116508`（全黄金绿盘“绿金迪”）、`126508`、以及 `116506` / `126506`（950 铂金栗色陶瓷圈冰蓝盘）；
   - **殿堂级彩虹迪**：`116595RBOW`（玫瑰金）与新款 `126599RBOW` 等原厂渐变蓝宝石镶嵌高珠款。
+- **已上线核心型号专章直达**：
+  - 钢迪：[116500LN](/brands/rolex/daytona/116500ln) · [126500LN](/brands/rolex/daytona/126500ln)
+  - 胶带迪：[116515LN](/brands/rolex/daytona/116515ln) · [116518LN](/brands/rolex/daytona/116518ln) · [126518LN](/brands/rolex/daytona/126518ln)
+  - 全金与铂金迪：[116505](/brands/rolex/daytona/116505) · [116508](/brands/rolex/daytona/116508) · [126505](/brands/rolex/daytona/126505) · [126508](/brands/rolex/daytona/126508) · [126506](/brands/rolex/daytona/126506)
+  - 原厂彩虹迪：[116595RBOW](/brands/rolex/daytona/116595rbow) · [126599RBOW](/brands/rolex/daytona/126599rbow)
 
 ![劳力士宇宙计型迪通拿 126500LN 熊猫盘腕表](/images/general/materials/ceramic/rolex-daytona-126500ln-ceramic.jpg)
 
@@ -76,6 +81,7 @@
   - 标志性的**三排半圆形链节元首型表带（President Bracelet，俗称“总统带”）**配隐蔽式皇冠折叠扣；
   - 表圈多配 18K 三角坑纹（狗牙圈）或原厂宝石镶嵌表圈（铂金款常见冰蓝盘配坑纹圈或光圈）。
 - **主力关注型号**：**`128238`**（36 mm 18K 黄金经典尺寸）与 **`228238`**（40 mm 18K 黄金现代主力尺寸）。
+- **已上线核心型号专章直达**：[128238（36mm 黄金元首表）](/brands/rolex/day-date/128238) · [228238（40mm 黄金元首表）](/brands/rolex/day-date/228238)
 
 ![劳力士星期日历型 18K 黄金元首表](/images/general/materials/rolex-day-date-yellow-gold.jpg)
 
@@ -89,6 +95,7 @@
   - 表圈分为光面圆拱圈、**18K 贵金属三角坑纹圈（“狗牙圈”）**与原厂镶钻圈；
   - 表带可配**五珠纪念型表带（Jubilee）**或**三格蚝式板带（Oyster）**。
 - **主力关注型号**：**41 mm 白色黄金钢（蚝式钢表壳配 18K 白金狗牙圈）爆款 `126334`**——其中**薄荷绿盘**、**温布尔登绿萝盘**（灰面绿边罗马数字）与**亮蓝盘**搭配五珠带最为抢手，二级市场流通速度极快。
+- **已上线核心型号专章直达**：[126334（41mm 白金钢狗牙圈爆款家族）](/brands/rolex/datejust/126334)
 
 ![劳力士日志型三角坑纹表圈与凸透镜日历](/images/general/functions/date/rolex-datejust-cyclops.jpg)
 
@@ -105,6 +112,7 @@
   - **`126610LN`（有历黑水鬼）**：黑陶圈配黑盘，二级市场最稳健的钢款流通硬通货；
   - **`126610LV`（有历绿水鬼 /“星巴克”）**：绿陶圈配黑盘（区别于上一代 40 mm `116610LV`“绿盘绿圈绿水鬼”），2023 年 MK2 亮绿圈版本市场关注度尤高；
   - 另有无日历经典款 `124060`（3 点位无水泡眼，盘面更对称）。
+- **已上线核心型号专章直达**：[126610LN（41mm 有历黑水鬼）](/brands/rolex/submariner/126610ln) · [126610LV（41mm 星巴克绿水鬼）](/brands/rolex/submariner/126610lv)
 
 ![劳力士潜航者型 126610LN 有历黑水鬼](/images/general/materials/steel/rolex-submariner-126610ln-steel.jpg)
 
@@ -123,6 +131,7 @@
   - **`126710GRNR`（皮蛋圈 / 灰黑圈）**：2024 年新增的灰黑双色陶瓷圈钢款，配绿色 GMT 针；
   - **`126720VTNR`（雪碧圈 / 左撇子绿黑圈）**：极其特殊的**表冠与日历窗均位于左侧 9 点位**的左冠版本；
   - **`126711CHNR` / `126715CHNR`（间金/全金沙士圈）**：永恒玫瑰金搭配棕黑双色陶瓷圈，贵金属运动表人气极高。
+- **已上线核心型号专章直达**：[126710BLRO（百事圈）](/brands/rolex/gmt-master-ii/126710blro) · [126710BLNR（国米圈）](/brands/rolex/gmt-master-ii/126710blnr) · [126710GRNR（皮蛋圈）](/brands/rolex/gmt-master-ii/126710grnr) · [126711CHNR（间金沙士圈）](/brands/rolex/gmt-master-ii/126711chnr) · [126715CHNR（全玫瑰金沙士圈）](/brands/rolex/gmt-master-ii/126715chnr) · [126720VTNR（左冠雪碧圈）](/brands/rolex/gmt-master-ii/126720vtnr)
 
 ![劳力士格林尼治型 II 126710BLRO 百事圈](/images/general/functions/dual-time/rolex-gmt-master-ii-blro.jpg)
 
@@ -135,6 +144,7 @@
   - **双向旋转立体浮雕数字哑光喷砂外圈**：数字刻度是**凸起抛光**在哑光喷砂底面之上的（而水鬼与 GMT 均是平滑陶瓷面上的凹刻数字），一秒即可区分；
   - 表壳中层表耳采用**流线型弧面抛光**，视觉比水鬼更显精致优雅。
 - **主力关注型号**：**`126655`**（40 mm 18K 永恒玫瑰金表壳，搭配**哑光黑色 Cerachrom 立体浮雕陶瓷圈**与内置钛镍合金弹片的 **Oysterflex 橡胶表带**），是贵金属胶带运动表中流通性极佳的常青爆款。
+- **已上线核心型号专章直达**：[126655（40mm 玫瑰金哑光陶圈胶带）](/brands/rolex/yacht-master/126655)
 
 ![劳力士游艇名仕型 126655 永恒玫瑰金胶带款](/images/brands/rolex/overview/rolex-yacht-master-126655.jpg)
 
