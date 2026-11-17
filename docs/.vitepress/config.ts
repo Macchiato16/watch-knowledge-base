@@ -122,6 +122,16 @@ export default defineConfig({
             { text: '5067 vs 5068 vs 5069 · 初代女手雷防错价', link: '/brands/patek-philippe/comparisons/aquanaut-luce-5067-5068-5069' },
             { text: '5267 vs 5268 vs 5269 · 现代女手雷与断代', link: '/brands/patek-philippe/comparisons/aquanaut-luce-5267-5268-5269' }
           ]
+        },
+        {
+          text: '理查米尔 · 基础必修',
+          collapsed: false,
+          items: [
+            { text: '品牌导览与系列全览', link: '/brands/richard-mille/' },
+            { text: '品牌材质', link: '/brands/richard-mille/materials' },
+            { text: '品牌工艺', link: '/brands/richard-mille/craftsmanship' },
+            { text: '型号解读', link: '/brands/richard-mille/reference-guide' }
+          ]
         }
       ],
       '/': [
