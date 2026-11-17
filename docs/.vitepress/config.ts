@@ -51,156 +51,168 @@ export default defineConfig({
           ]
         },
         {
-          text: '百达翡丽 · 基础必修',
-          collapsed: false,
+          text: '百达翡丽',
+          collapsed: true,
           items: [
-            { text: '品牌导览与系列全览', link: '/brands/patek-philippe/' },
-            { text: '品牌材质', link: '/brands/patek-philippe/materials' },
-            { text: '品牌工艺', link: '/brands/patek-philippe/craftsmanship' },
-            { text: '型号解读', link: '/brands/patek-philippe/reference-guide' }
+            {
+              text: '基础必修',
+              collapsed: true,
+              items: [
+                { text: '品牌导览与系列全览', link: '/brands/patek-philippe/' },
+                { text: '品牌材质', link: '/brands/patek-philippe/materials' },
+                { text: '品牌工艺', link: '/brands/patek-philippe/craftsmanship' },
+                { text: '型号解读', link: '/brands/patek-philippe/reference-guide' }
+              ]
+            },
+            {
+              text: 'Nautilus（鹦鹉螺）',
+              collapsed: true,
+              items: [
+                { text: '5711 · 经典大三针停产热门', link: '/brands/patek-philippe/nautilus/5711' },
+                { text: '5811 · 5711 白金继任款', link: '/brands/patek-philippe/nautilus/5811' },
+                { text: '5810 · 50周年纪念款', link: '/brands/patek-philippe/nautilus/5810' },
+                { text: '5712 · 月相动力存储', link: '/brands/patek-philippe/nautilus/5712' },
+                { text: '5726 · 年历月相款', link: '/brands/patek-philippe/nautilus/5726' },
+                { text: '5980 · 飞返计时', link: '/brands/patek-philippe/nautilus/5980' },
+                { text: '5990 · 双时区飞返计时', link: '/brands/patek-philippe/nautilus/5990' },
+                { text: '5740 · 超薄万年历', link: '/brands/patek-philippe/nautilus/5740' },
+                { text: '7010 · 女款石英钻圈', link: '/brands/patek-philippe/nautilus/7010' },
+                { text: '7118 · 女款自动机械', link: '/brands/patek-philippe/nautilus/7118' }
+              ]
+            },
+            {
+              text: 'Cubitus（方形鹦鹉螺）',
+              collapsed: true,
+              items: [
+                { text: '5821 · 45mm 方形大三针', link: '/brands/patek-philippe/cubitus/5821' },
+                { text: '5822 · 45mm 瞬跳大日历月相', link: '/brands/patek-philippe/cubitus/5822' },
+                { text: '7128 · 40mm 中号/女款', link: '/brands/patek-philippe/cubitus/7128' }
+              ]
+            },
+            {
+              text: '男款手雷（Aquanaut）',
+              collapsed: true,
+              items: [
+                { text: '5167 · 40.8mm 经典大三针', link: '/brands/patek-philippe/aquanaut/5167' },
+                { text: '5168 · 42.2mm 白金 Jumbo', link: '/brands/patek-philippe/aquanaut/5168' },
+                { text: '5164 · Travel Time 双时区', link: '/brands/patek-philippe/aquanaut/5164' },
+                { text: '5261 · 39.9mm 年历月相', link: '/brands/patek-philippe/aquanaut/5261' },
+                { text: '5968 · 42.2mm 飞返计时', link: '/brands/patek-philippe/aquanaut/5968' }
+              ]
+            },
+            {
+              text: '女款手雷（Aquanaut Luce）',
+              collapsed: true,
+              items: [
+                { text: '5067 · 35.6mm 经典精钢石英', link: '/brands/patek-philippe/aquanaut/5067' },
+                { text: '5068 · 35.6mm 玫瑰金机械', link: '/brands/patek-philippe/aquanaut/5068' },
+                { text: '5069 · 35.6mm 白金机械', link: '/brands/patek-philippe/aquanaut/5069' },
+                { text: '5267 · 38.8mm 现代精钢石英', link: '/brands/patek-philippe/aquanaut/5267' },
+                { text: '5268 · 38.8mm 现代贵金属机械', link: '/brands/patek-philippe/aquanaut/5268' },
+                { text: '5269 · 38.8mm 无侧键双时区', link: '/brands/patek-philippe/aquanaut/5269' }
+              ]
+            },
+            {
+              text: '关联型号与对比记忆',
+              collapsed: true,
+              items: [
+                { text: '看图识表总纲（24款定位器）', link: '/brands/patek-philippe/comparisons/' },
+                { text: '5711 vs 5811 vs 5810 · 鹦鹉螺极简三代', link: '/brands/patek-philippe/comparisons/nautilus-5711-5811-5810' },
+                { text: '5726 vs 5740 · 年历与万年历月相双雄', link: '/brands/patek-philippe/comparisons/nautilus-5726-5740' },
+                { text: '5980 vs 5990 · 鹦鹉螺飞返计时两代', link: '/brands/patek-philippe/comparisons/nautilus-5980-5990' },
+                { text: '7010 vs 7118 · 女款鹦鹉螺双姝', link: '/brands/patek-philippe/comparisons/nautilus-ladies-7010-7118' },
+                { text: '5821 vs 7128 · 方形大三针大小号', link: '/brands/patek-philippe/comparisons/cubitus-5821-7128' },
+                { text: '5167 vs 5168 · 男款大三针手雷双雄', link: '/brands/patek-philippe/comparisons/aquanaut-5167-5168' },
+                { text: '5067 vs 5068 vs 5069 · 初代女手雷防错价', link: '/brands/patek-philippe/comparisons/aquanaut-luce-5067-5068-5069' },
+                { text: '5267 vs 5268 vs 5269 · 现代女手雷与断代', link: '/brands/patek-philippe/comparisons/aquanaut-luce-5267-5268-5269' }
+              ]
+            }
           ]
         },
         {
-          text: '百达翡丽 · Nautilus（鹦鹉螺）',
-          collapsed: false,
+          text: '理查米尔',
+          collapsed: true,
           items: [
-            { text: '5711 · 经典大三针停产热门', link: '/brands/patek-philippe/nautilus/5711' },
-            { text: '5811 · 5711 白金继任款', link: '/brands/patek-philippe/nautilus/5811' },
-            { text: '5810 · 50周年纪念款', link: '/brands/patek-philippe/nautilus/5810' },
-            { text: '5712 · 月相动力存储', link: '/brands/patek-philippe/nautilus/5712' },
-            { text: '5726 · 年历月相款', link: '/brands/patek-philippe/nautilus/5726' },
-            { text: '5980 · 飞返计时', link: '/brands/patek-philippe/nautilus/5980' },
-            { text: '5990 · 双时区飞返计时', link: '/brands/patek-philippe/nautilus/5990' },
-            { text: '5740 · 超薄万年历', link: '/brands/patek-philippe/nautilus/5740' },
-            { text: '7010 · 女款石英钻圈', link: '/brands/patek-philippe/nautilus/7010' },
-            { text: '7118 · 女款自动机械', link: '/brands/patek-philippe/nautilus/7118' }
-          ]
-        },
-        {
-          text: '百达翡丽 · Cubitus（方形鹦鹉螺）',
-          collapsed: false,
-          items: [
-            { text: '5821 · 45mm 方形大三针', link: '/brands/patek-philippe/cubitus/5821' },
-            { text: '5822 · 45mm 瞬跳大日历月相', link: '/brands/patek-philippe/cubitus/5822' },
-            { text: '7128 · 40mm 中号/女款', link: '/brands/patek-philippe/cubitus/7128' }
-          ]
-        },
-        {
-          text: '百达翡丽 · 男款手雷（Aquanaut）',
-          collapsed: false,
-          items: [
-            { text: '5167 · 40.8mm 经典大三针', link: '/brands/patek-philippe/aquanaut/5167' },
-            { text: '5168 · 42.2mm 白金 Jumbo', link: '/brands/patek-philippe/aquanaut/5168' },
-            { text: '5164 · Travel Time 双时区', link: '/brands/patek-philippe/aquanaut/5164' },
-            { text: '5261 · 39.9mm 年历月相', link: '/brands/patek-philippe/aquanaut/5261' },
-            { text: '5968 · 42.2mm 飞返计时', link: '/brands/patek-philippe/aquanaut/5968' }
-          ]
-        },
-        {
-          text: '百达翡丽 · 女款手雷（Aquanaut Luce）',
-          collapsed: false,
-          items: [
-            { text: '5067 · 35.6mm 经典精钢石英', link: '/brands/patek-philippe/aquanaut/5067' },
-            { text: '5068 · 35.6mm 玫瑰金机械', link: '/brands/patek-philippe/aquanaut/5068' },
-            { text: '5069 · 35.6mm 白金机械', link: '/brands/patek-philippe/aquanaut/5069' },
-            { text: '5267 · 38.8mm 现代精钢石英', link: '/brands/patek-philippe/aquanaut/5267' },
-            { text: '5268 · 38.8mm 现代贵金属机械', link: '/brands/patek-philippe/aquanaut/5268' },
-            { text: '5269 · 38.8mm 无侧键双时区', link: '/brands/patek-philippe/aquanaut/5269' }
-          ]
-        },
-        {
-          text: '百达翡丽 · 关联型号与对比记忆',
-          collapsed: false,
-          items: [
-            { text: '看图识表总纲（24款定位器）', link: '/brands/patek-philippe/comparisons/' },
-            { text: '5711 vs 5811 vs 5810 · 鹦鹉螺极简三代', link: '/brands/patek-philippe/comparisons/nautilus-5711-5811-5810' },
-            { text: '5726 vs 5740 · 年历与万年历月相双雄', link: '/brands/patek-philippe/comparisons/nautilus-5726-5740' },
-            { text: '5980 vs 5990 · 鹦鹉螺飞返计时两代', link: '/brands/patek-philippe/comparisons/nautilus-5980-5990' },
-            { text: '7010 vs 7118 · 女款鹦鹉螺双姝', link: '/brands/patek-philippe/comparisons/nautilus-ladies-7010-7118' },
-            { text: '5821 vs 7128 · 方形大三针大小号', link: '/brands/patek-philippe/comparisons/cubitus-5821-7128' },
-            { text: '5167 vs 5168 · 男款大三针手雷双雄', link: '/brands/patek-philippe/comparisons/aquanaut-5167-5168' },
-            { text: '5067 vs 5068 vs 5069 · 初代女手雷防错价', link: '/brands/patek-philippe/comparisons/aquanaut-luce-5067-5068-5069' },
-            { text: '5267 vs 5268 vs 5269 · 现代女手雷与断代', link: '/brands/patek-philippe/comparisons/aquanaut-luce-5267-5268-5269' }
-          ]
-        },
-        {
-          text: '理查米尔 · 基础必修',
-          collapsed: false,
-          items: [
-            { text: '品牌导览与系列全览', link: '/brands/richard-mille/' },
-            { text: '品牌材质', link: '/brands/richard-mille/materials' },
-            { text: '品牌工艺', link: '/brands/richard-mille/craftsmanship' },
-            { text: '型号解读', link: '/brands/richard-mille/reference-guide' }
-          ]
-        },
-        {
-          text: '理查米尔 · 07 系列（女装主力与运动）',
-          collapsed: false,
-          items: [
-            { text: 'RM 07-01 · 现代女装核心霸主', link: '/brands/richard-mille/07/rm-07-01' },
-            { text: 'RM 07-04 · 36克女性超轻运动', link: '/brands/richard-mille/07/rm-07-04' }
-          ]
-        },
-        {
-          text: '理查米尔 · 11 系列（大号飞返年历）',
-          collapsed: false,
-          items: [
-            { text: 'RM 011 · 初代飞返年历开山款', link: '/brands/richard-mille/11/rm-011' },
-            { text: 'RM 11-03 · 空气动力学棱角主力', link: '/brands/richard-mille/11/rm-11-03' },
-            { text: 'RM 11-05 · Cermet 金属陶瓷 GMT', link: '/brands/richard-mille/11/rm-11-05' }
-          ]
-        },
-        {
-          text: '理查米尔 · 35 系列（纳达尔运动线）',
-          collapsed: false,
-          items: [
-            { text: 'RM 035 · 初代镁铝手动小牛', link: '/brands/richard-mille/35/rm-035' },
-            { text: 'RM 35-01 · Carbon TPT 手动款', link: '/brands/richard-mille/35/rm-35-01' },
-            { text: 'RM 35-02 · 首款自动上链纳达尔', link: '/brands/richard-mille/35/rm-35-02' },
-            { text: 'RM 35-03 · 专利蝶形摆陀旗舰', link: '/brands/richard-mille/35/rm-35-03' }
-          ]
-        },
-        {
-          text: '理查米尔 · 55 系列（巴巴·沃森传奇）',
-          collapsed: false,
-          items: [
-            { text: 'RM 055 · ATZ 白陶瓷手动硬通货', link: '/brands/richard-mille/55/rm-055' }
-          ]
-        },
-        {
-          text: '理查米尔 · 65 系列（高振频追针旗舰）',
-          collapsed: false,
-          items: [
-            { text: 'RM 65-01 · 5Hz 自动双秒追针', link: '/brands/richard-mille/65/rm-65-01' }
-          ]
-        },
-        {
-          text: '理查米尔 · 67 系列（超薄酒桶双生花）',
-          collapsed: false,
-          items: [
-            { text: 'RM 67-01 · 7.75mm 都市超薄', link: '/brands/richard-mille/67/rm-67-01' },
-            { text: 'RM 67-02 · 32克极致运动超轻', link: '/brands/richard-mille/67/rm-67-02' }
-          ]
-        },
-        {
-          text: '理查米尔 · 72 系列（自产飞返标杆）',
-          collapsed: false,
-          items: [
-            { text: 'RM 72-01 · 全自产摆动齿轮飞返', link: '/brands/richard-mille/72/rm-72-01' }
-          ]
-        },
-        {
-          text: '理查米尔 · 关联型号与对比记忆',
-          collapsed: false,
-          items: [
-            { text: '看图识表总纲（14款定位器）', link: '/brands/richard-mille/comparisons/' },
-            { text: '07-01 vs 07-04 · 女装优雅与超轻运动', link: '/brands/richard-mille/comparisons/07-rm-07-01-vs-07-04' },
-            { text: '011 vs 11-03 vs 11-05 · 大号飞返三代', link: '/brands/richard-mille/comparisons/11-rm-011-vs-11-03-vs-11-05' },
-            { text: '035 vs 35-01 · 手动密底小牛前两代', link: '/brands/richard-mille/comparisons/35-manual-rm-035-vs-35-01' },
-            { text: '35-02 vs 35-03 · 自动透底纳达尔双主力', link: '/brands/richard-mille/comparisons/35-auto-rm-35-02-vs-35-03' },
-            { text: '67-01 vs 67-02 · 超薄酒桶双生花', link: '/brands/richard-mille/comparisons/67-rm-67-01-vs-67-02' },
-            { text: '055 vs 35-01/35-02 · 无侧键镂空三针双王', link: '/brands/richard-mille/comparisons/skeleton-rm-055-vs-35-series' },
-            { text: '11-03 vs 72-01 vs 65-01 · 现代计时三旗舰', link: '/brands/richard-mille/comparisons/chrono-rm-11-03-vs-72-01-vs-65-01' }
+            {
+              text: '基础必修',
+              collapsed: true,
+              items: [
+                { text: '品牌导览与系列全览', link: '/brands/richard-mille/' },
+                { text: '品牌材质', link: '/brands/richard-mille/materials' },
+                { text: '品牌工艺', link: '/brands/richard-mille/craftsmanship' },
+                { text: '型号解读', link: '/brands/richard-mille/reference-guide' }
+              ]
+            },
+            {
+              text: '07 系列（女装主力与运动）',
+              collapsed: true,
+              items: [
+                { text: 'RM 07-01 · 现代女装核心霸主', link: '/brands/richard-mille/07/rm-07-01' },
+                { text: 'RM 07-04 · 36克女性超轻运动', link: '/brands/richard-mille/07/rm-07-04' }
+              ]
+            },
+            {
+              text: '11 系列（大号飞返年历）',
+              collapsed: true,
+              items: [
+                { text: 'RM 011 · 初代飞返年历开山款', link: '/brands/richard-mille/11/rm-011' },
+                { text: 'RM 11-03 · 空气动力学棱角主力', link: '/brands/richard-mille/11/rm-11-03' },
+                { text: 'RM 11-05 · Cermet 金属陶瓷 GMT', link: '/brands/richard-mille/11/rm-11-05' }
+              ]
+            },
+            {
+              text: '35 系列（纳达尔运动线）',
+              collapsed: true,
+              items: [
+                { text: 'RM 035 · 初代镁铝手动小牛', link: '/brands/richard-mille/35/rm-035' },
+                { text: 'RM 35-01 · Carbon TPT 手动款', link: '/brands/richard-mille/35/rm-35-01' },
+                { text: 'RM 35-02 · 首款自动上链纳达尔', link: '/brands/richard-mille/35/rm-35-02' },
+                { text: 'RM 35-03 · 专利蝶形摆陀旗舰', link: '/brands/richard-mille/35/rm-35-03' }
+              ]
+            },
+            {
+              text: '55 系列（巴巴·沃森传奇）',
+              collapsed: true,
+              items: [
+                { text: 'RM 055 · ATZ 白陶瓷手动硬通货', link: '/brands/richard-mille/55/rm-055' }
+              ]
+            },
+            {
+              text: '65 系列（高振频追针旗舰）',
+              collapsed: true,
+              items: [
+                { text: 'RM 65-01 · 5Hz 自动双秒追针', link: '/brands/richard-mille/65/rm-65-01' }
+              ]
+            },
+            {
+              text: '67 系列（超薄酒桶双生花）',
+              collapsed: true,
+              items: [
+                { text: 'RM 67-01 · 7.75mm 都市超薄', link: '/brands/richard-mille/67/rm-67-01' },
+                { text: 'RM 67-02 · 32克极致运动超轻', link: '/brands/richard-mille/67/rm-67-02' }
+              ]
+            },
+            {
+              text: '72 系列（自产飞返标杆）',
+              collapsed: true,
+              items: [
+                { text: 'RM 72-01 · 全自产摆动齿轮飞返', link: '/brands/richard-mille/72/rm-72-01' }
+              ]
+            },
+            {
+              text: '关联型号与对比记忆',
+              collapsed: true,
+              items: [
+                { text: '看图识表总纲（14款定位器）', link: '/brands/richard-mille/comparisons/' },
+                { text: '07-01 vs 07-04 · 女装优雅与超轻运动', link: '/brands/richard-mille/comparisons/07-rm-07-01-vs-07-04' },
+                { text: '011 vs 11-03 vs 11-05 · 大号飞返三代', link: '/brands/richard-mille/comparisons/11-rm-011-vs-11-03-vs-11-05' },
+                { text: '035 vs 35-01 · 手动密底小牛前两代', link: '/brands/richard-mille/comparisons/35-manual-rm-035-vs-35-01' },
+                { text: '35-02 vs 35-03 · 自动透底纳达尔双主力', link: '/brands/richard-mille/comparisons/35-auto-rm-35-02-vs-35-03' },
+                { text: '67-01 vs 67-02 · 超薄酒桶双生花', link: '/brands/richard-mille/comparisons/67-rm-67-01-vs-67-02' },
+                { text: '055 vs 35-01/35-02 · 无侧键镂空三针双王', link: '/brands/richard-mille/comparisons/skeleton-rm-055-vs-35-series' },
+                { text: '11-03 vs 72-01 vs 65-01 · 现代计时三旗舰', link: '/brands/richard-mille/comparisons/chrono-rm-11-03-vs-72-01-vs-65-01' }
+              ]
+            }
           ]
         }
       ],
