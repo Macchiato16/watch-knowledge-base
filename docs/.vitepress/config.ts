@@ -214,6 +214,23 @@ export default defineConfig({
               ]
             }
           ]
+        },
+        {
+          text: '劳力士',
+          collapsed: true,
+          items: [
+            {
+              text: '基础必修',
+              collapsed: true,
+              items: [
+                { text: '品牌导览与系列全览', link: '/brands/rolex/' },
+                { text: '品牌材质', link: '/brands/rolex/materials' },
+                { text: '品牌工艺', link: '/brands/rolex/craftsmanship' },
+                { text: '型号解读', link: '/brands/rolex/reference-guide' },
+                { text: '表带类型', link: '/brands/rolex/bracelets' }
+              ]
+            }
+          ]
         }
       ],
       '/': [
