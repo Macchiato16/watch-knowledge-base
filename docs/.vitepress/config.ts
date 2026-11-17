@@ -132,6 +132,62 @@ export default defineConfig({
             { text: '品牌工艺', link: '/brands/richard-mille/craftsmanship' },
             { text: '型号解读', link: '/brands/richard-mille/reference-guide' }
           ]
+        },
+        {
+          text: '理查米尔 · 07 系列（女装主力与运动）',
+          collapsed: false,
+          items: [
+            { text: 'RM 07-01 · 现代女装核心霸主', link: '/brands/richard-mille/07/rm-07-01' },
+            { text: 'RM 07-04 · 36克女性超轻运动', link: '/brands/richard-mille/07/rm-07-04' }
+          ]
+        },
+        {
+          text: '理查米尔 · 11 系列（大号飞返年历）',
+          collapsed: false,
+          items: [
+            { text: 'RM 011 · 初代飞返年历开山款', link: '/brands/richard-mille/11/rm-011' },
+            { text: 'RM 11-03 · 空气动力学棱角主力', link: '/brands/richard-mille/11/rm-11-03' },
+            { text: 'RM 11-05 · Cermet 金属陶瓷 GMT', link: '/brands/richard-mille/11/rm-11-05' }
+          ]
+        },
+        {
+          text: '理查米尔 · 35 系列（纳达尔运动线）',
+          collapsed: false,
+          items: [
+            { text: 'RM 035 · 初代镁铝手动小牛', link: '/brands/richard-mille/35/rm-035' },
+            { text: 'RM 35-01 · Carbon TPT 手动款', link: '/brands/richard-mille/35/rm-35-01' },
+            { text: 'RM 35-02 · 首款自动上链纳达尔', link: '/brands/richard-mille/35/rm-35-02' },
+            { text: 'RM 35-03 · 专利蝶形摆陀旗舰', link: '/brands/richard-mille/35/rm-35-03' }
+          ]
+        },
+        {
+          text: '理查米尔 · 55 系列（巴巴·沃森传奇）',
+          collapsed: false,
+          items: [
+            { text: 'RM 055 · ATZ 白陶瓷手动硬通货', link: '/brands/richard-mille/55/rm-055' }
+          ]
+        },
+        {
+          text: '理查米尔 · 65 系列（高振频追针旗舰）',
+          collapsed: false,
+          items: [
+            { text: 'RM 65-01 · 5Hz 自动双秒追针', link: '/brands/richard-mille/65/rm-65-01' }
+          ]
+        },
+        {
+          text: '理查米尔 · 67 系列（超薄酒桶双生花）',
+          collapsed: false,
+          items: [
+            { text: 'RM 67-01 · 7.75mm 都市超薄', link: '/brands/richard-mille/67/rm-67-01' },
+            { text: 'RM 67-02 · 32克极致运动超轻', link: '/brands/richard-mille/67/rm-67-02' }
+          ]
+        },
+        {
+          text: '理查米尔 · 72 系列（自产飞返标杆）',
+          collapsed: false,
+          items: [
+            { text: 'RM 72-01 · 全自产摆动齿轮飞返', link: '/brands/richard-mille/72/rm-72-01' }
+          ]
         }
       ],
       '/': [
