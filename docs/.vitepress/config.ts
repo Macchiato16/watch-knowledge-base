@@ -61,7 +61,8 @@ export default defineConfig({
                 { text: '品牌导览与系列全览', link: '/brands/patek-philippe/' },
                 { text: '品牌材质', link: '/brands/patek-philippe/materials' },
                 { text: '品牌工艺', link: '/brands/patek-philippe/craftsmanship' },
-                { text: '型号解读', link: '/brands/patek-philippe/reference-guide' }
+                { text: '型号解读', link: '/brands/patek-philippe/reference-guide' },
+                { text: '保卡演变', link: '/brands/patek-philippe/warranty-evolution' }
               ]
             },
             {
@@ -140,7 +141,8 @@ export default defineConfig({
                 { text: '品牌导览与系列全览', link: '/brands/richard-mille/' },
                 { text: '品牌材质', link: '/brands/richard-mille/materials' },
                 { text: '品牌工艺', link: '/brands/richard-mille/craftsmanship' },
-                { text: '型号解读', link: '/brands/richard-mille/reference-guide' }
+                { text: '型号解读', link: '/brands/richard-mille/reference-guide' },
+                { text: '保卡演变', link: '/brands/richard-mille/warranty-evolution' }
               ]
             },
             {
@@ -227,7 +229,8 @@ export default defineConfig({
                 { text: '品牌材质', link: '/brands/rolex/materials' },
                 { text: '品牌工艺', link: '/brands/rolex/craftsmanship' },
                 { text: '型号解读', link: '/brands/rolex/reference-guide' },
-                { text: '表带类型', link: '/brands/rolex/bracelets' }
+                { text: '表带类型', link: '/brands/rolex/bracelets' },
+                { text: '保卡演变', link: '/brands/rolex/warranty-evolution' }
               ]
             },
             {
@@ -318,7 +321,8 @@ export default defineConfig({
                 { text: '品牌导览与系列全览', link: '/brands/audemars-piguet/' },
                 { text: '品牌材质', link: '/brands/audemars-piguet/materials' },
                 { text: '品牌工艺', link: '/brands/audemars-piguet/craftsmanship' },
-                { text: '型号解读', link: '/brands/audemars-piguet/reference-guide' }
+                { text: '型号解读', link: '/brands/audemars-piguet/reference-guide' },
+                { text: '保卡演变', link: '/brands/audemars-piguet/warranty-evolution' }
               ]
             },
             {

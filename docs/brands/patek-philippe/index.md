@@ -143,7 +143,7 @@
 ### 2. 后补档案摘录（Extract from the Archives）
 
 - **什么是后补档案**：当原装“出生纸”遗失，或古董表历经多手流转后，表主可向日内瓦原厂申请调取历史生产与销售账簿记录，由原厂出具一份纸质《档案摘录》，列明该机芯号与表壳号对应的出厂年份、首次销售日期及出厂原始盘面/表带配置。
-- **现行申请门槛**：按照百达翡丽官方现行规则，仅受理**首次售出满 10 年以上**的时计申请（现行官方收费为 500 瑞士法郎，且同一枚腕表每 12 个月限申请一次，具体以官网最新规则为准）。
+- **现行申请门槛（2021 年 4 月新规）**：自 2021 年 4 月 1 日起，百达翡丽官方大幅收紧政策，仅受理 **1989 年（含）及以前出厂/售出**的古董时计申请（官方收费为 500 瑞士法郎，且同一枚腕表每 5 年限申请一次，完整断代详见[百达翡丽保卡演变](/brands/patek-philippe/warranty-evolution)）。
 - **必须向客户与内部强调的边界**：
   1. **后补档案 ≠ 原装“出生纸”**：后补档案可佐证原厂身份与原始盘面配置（例如排查是否“后换盘”或“拼装表”），但在**现代款二手估值中不能完全等同于原装“出生纸”**；
   2. **后补档案 ≠ 真伪鉴定证书**：百达翡丽官方在《档案摘录》中明确声明，该文件仅是对历史账簿记录的抄录，**不构成对腕表当前真伪或零部件原装度的商业鉴定保证，也不作为保修凭证**。
@@ -161,6 +161,7 @@
 - 下一篇：**[百达翡丽品牌材质](/brands/patek-philippe/materials)**（深入百达翡丽材质尾缀字母规律、贵金属配比与铂金 6 点位真钻暗记）
 - 进阶必读：**[百达翡丽品牌工艺](/brands/patek-philippe/craftsmanship)**（掌握 PP 印记整表精修标准、壳链刀锋倒角、大明火珐琅 `EMAIL` 与二手品相防坑红线）
 - 编码实战：**[百达翡丽型号解读](/brands/patek-philippe/reference-guide)**（彻底拆解 4 位/5 位数字型号与 `/1A`、`/200`、`/1300A`、`G-001` 等后缀编码含义）
+- 证书风控：**[百达翡丽保卡演变](/brands/patek-philippe/warranty-evolution)**（深入历代原产地证书“出生纸”断代、2024 年 5 年全球联保新政与新老对比验伪）
 - **看图识表总纲与关联型号对比（3秒视觉锚点定位器） →**：**[进入 24 款运动表看图识表总纲](/brands/patek-philippe/comparisons/)**，内含交互式特征筛选漏斗与 8 组同系列真易混 / 前后代精悍小对比：
   - 鹦鹉螺内部对比：[5711 vs 5811 vs 5810（极简三代）](/brands/patek-philippe/comparisons/nautilus-5711-5811-5810) · [5726 vs 5740（年历与万年历）](/brands/patek-philippe/comparisons/nautilus-5726-5740) · [5980 vs 5990（计时前后代）](/brands/patek-philippe/comparisons/nautilus-5980-5990) · [7010 vs 7118（女款双姝）](/brands/patek-philippe/comparisons/nautilus-ladies-7010-7118)
   - 方形与手雷内部对比：[5821 vs 7128（方形大小号）](/brands/patek-philippe/comparisons/cubitus-5821-7128) · [5167 vs 5168（男款大三针手雷）](/brands/patek-philippe/comparisons/aquanaut-5167-5168) · [5067 vs 5068 vs 5069（初代女手雷防错价）](/brands/patek-philippe/comparisons/aquanaut-luce-5067-5068-5069) · [5267 vs 5268 vs 5269（现代女手雷与断代）](/brands/patek-philippe/comparisons/aquanaut-luce-5267-5268-5269)
