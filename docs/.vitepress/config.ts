@@ -306,6 +306,22 @@ export default defineConfig({
               ]
             }
           ]
+        },
+        {
+          text: '爱彼',
+          collapsed: true,
+          items: [
+            {
+              text: '基础必修',
+              collapsed: true,
+              items: [
+                { text: '品牌导览与系列全览', link: '/brands/audemars-piguet/' },
+                { text: '品牌材质', link: '/brands/audemars-piguet/materials' },
+                { text: '品牌工艺', link: '/brands/audemars-piguet/craftsmanship' },
+                { text: '型号解读', link: '/brands/audemars-piguet/reference-guide' }
+              ]
+            }
+          ]
         }
       ],
       '/': [
