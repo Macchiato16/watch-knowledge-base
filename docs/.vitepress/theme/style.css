@@ -106,3 +106,51 @@ body {
     font-size: 17px;
   }
 }
+
+/* 左侧全局目录：顶层三大板块（开始阅读 / 通用知识 / 品牌知识）纯标题大字号与分隔线视觉隔离 */
+.VPSidebar .group + .group {
+  margin-top: 6px;
+  padding-top: 16px !important;
+  border-top: 1.5px solid var(--vp-c-divider) !important;
+}
+
+.VPSidebar .VPSidebarItem.level-0 {
+  padding-bottom: 14px !important;
+}
+
+.VPSidebar .VPSidebarItem.level-0:not(.collapsible) > .item {
+  pointer-events: none;
+  margin-bottom: 6px;
+}
+
+.VPSidebar .VPSidebarItem.level-0:not(.collapsible) > .item > .text {
+  font-size: 15.5px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.04em;
+  line-height: 1.35 !important;
+  padding: 2px 0 2px 9px !important;
+  border-left: 3px solid var(--vp-c-brand-1);
+  color: var(--vp-c-text-1) !important;
+}
+
+/* 二级可折叠分类与品牌项（如 腕表材质 > / 百达翡丽 >）增强清晰层级感 */
+.VPSidebar .VPSidebarItem.level-1.collapsible > .item > .text {
+  font-weight: 600 !important;
+  color: var(--vp-c-text-1);
+}
+
+.VPSidebar .VPSidebarItem.level-1.collapsible > .item:hover > .text {
+  color: var(--vp-c-brand-1);
+}
+
+/* 控制深层折叠树缩进，避免长型号标题在窄侧栏过度挤压折行 */
+.VPSidebar .VPSidebarItem.level-1 > .items,
+.VPSidebar .VPSidebarItem.level-2 > .items,
+.VPSidebar .VPSidebarItem.level-3 > .items {
+  padding-left: 12px !important;
+}
+
+.VPSidebar .VPSidebarItem.level-3 .text {
+  font-size: 13.5px;
+  line-height: 21px;
+}

@@ -4,7 +4,7 @@
 
 ## 知识结构与学习顺序
 
-网站内容划分为 **通用知识** 与 **品牌知识** 两大板块。建议新人按以下路径循序阅读：
+全站内容已整合至**左侧统一全局目录树**（底层保持 **通用知识** 与 **品牌知识** 清晰分层，顶部导航栏同时提供四大品牌与看图识表定位器的快捷直达）。建议新人按左侧目录自上而下循序阅读：
 
 1. **通用知识（建立基础框架）**
    - [认识腕表结构](/general/structure/)：通过三维交互演示与图文对应，掌握表壳、机芯及关键运动部件的名称、位置与作用。
@@ -14,10 +14,13 @@
      - **基础功能**：[日期](/general/functions/basic/date)、[动力存储](/general/functions/basic/power-reserve)；
      - **实用复杂功能**：[双时区](/general/functions/complications/dual-time)、[计时](/general/functions/complications/chronograph)、[飞返计时](/general/functions/complications/flyback-chronograph)、[年历](/general/functions/complications/annual-calendar)；
      - **超级复杂功能**：[万年历](/general/functions/grand-complications/perpetual-calendar)、[双秒追针计时](/general/functions/grand-complications/split-seconds)、[陀飞轮](/general/functions/grand-complications/tourbillon)、[三问](/general/functions/grand-complications/minute-repeater)、[天文星象](/general/functions/grand-complications/astronomical/)。
-   - [腕表行业生态](/general/ecosystem/)：理解品牌定位、一二级市场流通与二手业务的关系。
+   - [腕表行业生态](/general/ecosystem/)：理解品牌定位、一二级市场流通与二手业务的关系（读完本篇点击底部「下一篇」即可无缝衔接进入品牌板块）。
 2. **品牌知识（结合核心业务深入）**
-   - 先阅读 [品牌知识导览](/brands/)，了解公司以 **百达翡丽（Patek Philippe）**、**理查米尔（Richard Mille）** 为核心重点，兼顾 **劳力士（Rolex）**、少量涉及 **爱彼（Audemars Piguet）** 的业务侧重阶梯与统一学习路径。
-   - **百达翡丽基础专章与热门系列（已上线）**：[百达翡丽品牌导览](/brands/patek-philippe/) → [品牌材质](/brands/patek-philippe/materials) → [品牌工艺](/brands/patek-philippe/craftsmanship) → [型号解读](/brands/patek-philippe/reference-guide) → **[看图识表与特征锚点对比](/brands/patek-philippe/comparisons/)**，以及鹦鹉螺（Nautilus，如 [5711](/brands/patek-philippe/nautilus/5711) / [5811](/brands/patek-philippe/nautilus/5811) / [5810](/brands/patek-philippe/nautilus/5810) / [5712](/brands/patek-philippe/nautilus/5712)）、方形鹦鹉螺（Cubitus，如 [5821](/brands/patek-philippe/cubitus/5821) / [5822](/brands/patek-philippe/cubitus/5822)）与男女款手雷（Aquanaut，如 [5167](/brands/patek-philippe/aquanaut/5167) / [5164](/brands/patek-philippe/aquanaut/5164) / [5268](/brands/patek-philippe/aquanaut/5268)）共 24 款核心型号专章。
+   - 先阅读 [品牌知识导览](/brands/)，掌握公司三层业务侧重阶梯与统一学习路径，随后按需深入四大品牌全套专章：
+   - **百达翡丽（核心重点 · 24 款型号）**：[品牌导览](/brands/patek-philippe/) · [品牌材质](/brands/patek-philippe/materials) · [品牌工艺](/brands/patek-philippe/craftsmanship) · [型号解读](/brands/patek-philippe/reference-guide) · [表扣换代与演进](/brands/patek-philippe/clasps) · [保卡演变](/brands/patek-philippe/warranty-evolution) · **[24 款看图识表定位器](/brands/patek-philippe/comparisons/)**（覆盖鹦鹉螺、方形 Cubitus 与男女款手雷）。
+   - **理查米尔（核心重点 · 14 款型号）**：[品牌导览](/brands/richard-mille/) · [品牌材质](/brands/richard-mille/materials) · [品牌工艺](/brands/richard-mille/craftsmanship) · [型号解读](/brands/richard-mille/reference-guide) · [保卡演变](/brands/richard-mille/warranty-evolution) · **[14 款看图识表定位器](/brands/richard-mille/comparisons/)**（覆盖 `07`、`11`、`35`、`55`、`65`、`67`、`72` 七大教学组）。
+   - **劳力士（流通基石 · 24 款型号）**：[品牌导览](/brands/rolex/) · [品牌材质](/brands/rolex/materials) · [品牌工艺](/brands/rolex/craftsmanship) · [型号解读](/brands/rolex/reference-guide) · [表带类型](/brands/rolex/bracelets) · [保卡演变](/brands/rolex/warranty-evolution) · **[24 款看图识表定位器](/brands/rolex/comparisons/)**（覆盖迪通拿、星期日历、日志、潜航者、格林尼治 II 与游艇名仕）。
+   - **爱彼（补充关注 · 17 款型号 / 58 个 SKU）**：[品牌导览](/brands/audemars-piguet/) · [品牌材质](/brands/audemars-piguet/materials) · [品牌工艺](/brands/audemars-piguet/craftsmanship) · [型号解读](/brands/audemars-piguet/reference-guide) · [保卡演变](/brands/audemars-piguet/warranty-evolution) · **[17 款看图识表定位器](/brands/audemars-piguet/comparisons/)**（覆盖皇家橡树与皇家橡树离岸型）。
 
 ## 阅读约定
 

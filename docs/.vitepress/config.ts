@@ -31,27 +31,127 @@ export default defineConfig({
   themeConfig: {
     nav: [
       {
-        text: '通用知识',
-        link: '/general/structure/',
-        activeMatch: '^/(general/|$)'
+        text: '通用基础',
+        activeMatch: '^/general/',
+        items: [
+          { text: '认识腕表结构（3D 拆解）', link: '/general/structure/' },
+          { text: '腕表材质总览与对比', link: '/general/materials/' },
+          { text: '腕表工艺与三大流派', link: '/general/craftsmanship/' },
+          { text: '实用与超级复杂功能', link: '/general/functions/complications/annual-calendar' },
+          { text: '腕表行业生态', link: '/general/ecosystem/' }
+        ]
       },
       {
-        text: '品牌知识',
-        link: '/brands/',
-        activeMatch: '^/brands/'
+        text: '百达翡丽',
+        link: '/brands/patek-philippe/',
+        activeMatch: '^/brands/patek-philippe/(?!comparisons/)'
+      },
+      {
+        text: '理查米尔',
+        link: '/brands/richard-mille/',
+        activeMatch: '^/brands/richard-mille/(?!comparisons/)'
+      },
+      {
+        text: '劳力士',
+        link: '/brands/rolex/',
+        activeMatch: '^/brands/rolex/(?!comparisons/)'
+      },
+      {
+        text: '爱彼',
+        link: '/brands/audemars-piguet/',
+        activeMatch: '^/brands/audemars-piguet/(?!comparisons/)'
+      },
+      {
+        text: '看图识表',
+        activeMatch: '^/brands/[^/]+/comparisons/',
+        items: [
+          { text: '百达翡丽 · 24款视觉定位器', link: '/brands/patek-philippe/comparisons/' },
+          { text: '理查米尔 · 14款视觉定位器', link: '/brands/richard-mille/comparisons/' },
+          { text: '劳力士 · 24款视觉定位器', link: '/brands/rolex/comparisons/' },
+          { text: '爱彼 · 17款视觉定位器', link: '/brands/audemars-piguet/comparisons/' }
+        ]
       }
     ],
 
-    sidebar: {
-      '/brands/': [
-        {
-          text: '品牌知识',
-          items: [
-            { text: '品牌知识导览', link: '/brands/' }
-          ]
-        },
-        {
-          text: '百达翡丽',
+    sidebar: [
+      {
+        text: '开始阅读',
+        items: [
+          { text: '知识库介绍', link: '/' }
+        ]
+      },
+      {
+        text: '通用知识',
+        items: [
+          { text: '认识腕表结构', link: '/general/structure/' },
+          {
+            text: '腕表材质',
+            collapsed: true,
+            items: [
+              { text: '材质总览与对比', link: '/general/materials/' },
+              { text: '精钢', link: '/general/materials/steel' },
+              { text: '陶瓷', link: '/general/materials/ceramic' },
+              { text: '黄金', link: '/general/materials/yellow-gold' },
+              { text: '玫瑰金', link: '/general/materials/rose-gold' },
+              { text: '白金', link: '/general/materials/white-gold' },
+              { text: '铂金', link: '/general/materials/platinum' }
+            ]
+          },
+          {
+            text: '腕表工艺',
+            collapsed: true,
+            items: [
+              { text: '工艺总览与流派对比', link: '/general/craftsmanship/' },
+              { text: '表壳加工与表面打磨', link: '/general/craftsmanship/case-finishing' },
+              { text: '表盘制作与艺术装饰', link: '/general/craftsmanship/dial-crafts' },
+              { text: '机芯修饰与现代表面工程', link: '/general/craftsmanship/movement-finishing' },
+              { text: '宝石镶嵌工艺', link: '/general/craftsmanship/gem-setting' }
+            ]
+          },
+          {
+            text: '腕表功能',
+            collapsed: true,
+            items: [
+              {
+                text: '基础功能',
+                collapsed: true,
+                items: [
+                  { text: '日期', link: '/general/functions/basic/date' },
+                  { text: '动力存储', link: '/general/functions/basic/power-reserve' }
+                ]
+              },
+              {
+                text: '实用复杂功能',
+                collapsed: true,
+                items: [
+                  { text: '双时区', link: '/general/functions/complications/dual-time' },
+                  { text: '计时', link: '/general/functions/complications/chronograph' },
+                  { text: '飞返计时', link: '/general/functions/complications/flyback-chronograph' },
+                  { text: '年历', link: '/general/functions/complications/annual-calendar' }
+                ]
+              },
+              {
+                text: '超级复杂功能',
+                collapsed: true,
+                items: [
+                  { text: '万年历', link: '/general/functions/grand-complications/perpetual-calendar' },
+                  { text: '双秒追针计时', link: '/general/functions/grand-complications/split-seconds' },
+                  { text: '陀飞轮', link: '/general/functions/grand-complications/tourbillon' },
+                  { text: '三问', link: '/general/functions/grand-complications/minute-repeater' },
+                  { text: '天文星象', link: '/general/functions/grand-complications/astronomical/' }
+                ]
+              }
+            ]
+          },
+          { text: '腕表行业生态', link: '/general/ecosystem/' }
+        ]
+      },
+      {
+        text: '品牌知识',
+        items: [
+          { text: '品牌知识导览', link: '/brands/' },
+          {
+            text: '百达翡丽',
           collapsed: true,
           items: [
             {
@@ -370,82 +470,9 @@ export default defineConfig({
             }
           ]
         }
-      ],
-      '/': [
-        {
-          text: '开始阅读',
-          items: [
-            { text: '知识库介绍', link: '/' }
-          ]
-        },
-        {
-          text: '通用知识',
-          items: [
-            { text: '认识腕表结构', link: '/general/structure/' },
-            {
-              text: '腕表材质',
-              collapsed: false,
-              items: [
-                { text: '材质总览与对比', link: '/general/materials/' },
-                { text: '精钢', link: '/general/materials/steel' },
-                { text: '陶瓷', link: '/general/materials/ceramic' },
-                { text: '黄金', link: '/general/materials/yellow-gold' },
-                { text: '玫瑰金', link: '/general/materials/rose-gold' },
-                { text: '白金', link: '/general/materials/white-gold' },
-                { text: '铂金', link: '/general/materials/platinum' }
-              ]
-            },
-            {
-              text: '腕表工艺',
-              collapsed: false,
-              items: [
-                { text: '工艺总览与流派对比', link: '/general/craftsmanship/' },
-                { text: '表壳加工与表面打磨', link: '/general/craftsmanship/case-finishing' },
-                { text: '表盘制作与艺术装饰', link: '/general/craftsmanship/dial-crafts' },
-                { text: '机芯修饰与现代表面工程', link: '/general/craftsmanship/movement-finishing' },
-                { text: '宝石镶嵌工艺', link: '/general/craftsmanship/gem-setting' }
-              ]
-            },
-            {
-              text: '腕表功能',
-              collapsed: false,
-              items: [
-                {
-                  text: '基础功能',
-                  collapsed: false,
-                  items: [
-                    { text: '日期', link: '/general/functions/basic/date' },
-                    { text: '动力存储', link: '/general/functions/basic/power-reserve' }
-                  ]
-                },
-                {
-                  text: '实用复杂功能',
-                  collapsed: false,
-                  items: [
-                    { text: '双时区', link: '/general/functions/complications/dual-time' },
-                    { text: '计时', link: '/general/functions/complications/chronograph' },
-                    { text: '飞返计时', link: '/general/functions/complications/flyback-chronograph' },
-                    { text: '年历', link: '/general/functions/complications/annual-calendar' }
-                  ]
-                },
-                {
-                  text: '超级复杂功能',
-                  collapsed: false,
-                  items: [
-                    { text: '万年历', link: '/general/functions/grand-complications/perpetual-calendar' },
-                    { text: '双秒追针计时', link: '/general/functions/grand-complications/split-seconds' },
-                    { text: '陀飞轮', link: '/general/functions/grand-complications/tourbillon' },
-                    { text: '三问', link: '/general/functions/grand-complications/minute-repeater' },
-                    { text: '天文星象', link: '/general/functions/grand-complications/astronomical/' }
-                  ]
-                }
-              ]
-            },
-            { text: '腕表行业生态', link: '/general/ecosystem/' }
-          ]
-        }
-      ]
-    },
+        ]
+      }
+    ],
 
     outline: {
       level: [2, 4],
