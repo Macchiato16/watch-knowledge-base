@@ -349,6 +349,19 @@ export default defineConfig({
                 { text: '26238 · 42mm 纵三眼一体飞返计时', link: '/brands/audemars-piguet/royal-oak-offshore/26238' },
                 { text: '26231 · 37mm 原厂 32 大钻圈胶带计时', link: '/brands/audemars-piguet/royal-oak-offshore/26231' }
               ]
+            },
+            {
+              text: '关联型号与对比记忆',
+              collapsed: true,
+              items: [
+                { text: '看图识表总纲（17款定位器）', link: '/brands/audemars-piguet/comparisons/' },
+                { text: '15202 vs 16202 · Jumbo 超薄双针两代', link: '/brands/audemars-piguet/comparisons/royal-oak-jumbo-15202-vs-16202' },
+                { text: '15500 vs 15510 · 41mm 自动大三针断代', link: '/brands/audemars-piguet/comparisons/royal-oak-41-selfwinding-15500-vs-15510' },
+                { text: '15407 vs 15416 · 同轴双摆轮金属与全陶瓷', link: '/brands/audemars-piguet/comparisons/royal-oak-openworked-15407-vs-15416' },
+                { text: '26331 vs 26239 vs 26240 · 41mm 计时三代', link: '/brands/audemars-piguet/comparisons/royal-oak-chrono-26331-vs-26239-vs-26240' },
+                { text: '33/34/37mm 矩阵 · 石英与原厂钻圈防错价', link: '/brands/audemars-piguet/comparisons/royal-oak-mid-ladies-15550-15551-77350-77451-67650' },
+                { text: '皇橡 vs 离岸型 · 15720/26238/26231 切分', link: '/brands/audemars-piguet/comparisons/royal-oak-vs-offshore-15720-26238-26231' }
+              ]
             }
           ]
         }

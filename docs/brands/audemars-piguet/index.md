@@ -105,3 +105,4 @@
 - 下一篇：**[爱彼品牌材质](/brands/audemars-piguet/materials)**（拆解[精钢](/general/materials/steel)、18K 玫瑰金/黄金/白金、950 铂金、全陶瓷、锻造碳与钛金属的物理特性及磕碰风险）
 - 进阶必读：**[爱彼品牌工艺](/brands/audemars-piguet/craftsmanship)**（深入 `Petite / Grande / Méga Tapisserie` 格纹机刻工艺、霜金 Hammered Gold、拉丝与镜面倒角及八角棱线鉴定）
 - 编码实战：**[爱彼型号解读](/brands/audemars-piguet/reference-guide)**（彻底理清四段式编码结构、`ST / OR / BC / CE / TI` 材质代码、`50 周年 .01` 与常规摆陀尾码顺延规律）
+- 看图识表：**[爱彼看图识表总纲与 6 组对比记忆](/brands/audemars-piguet/comparisons/)**（通过 17 款三步特征锚点定位器与新老断代/防后镶钻对比，锁死一线收售易混红线）
