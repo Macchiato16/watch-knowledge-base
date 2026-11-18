@@ -207,3 +207,4 @@
 - 工艺核心：**[劳力士品牌工艺](/brands/rolex/craftsmanship)**（拆解太阳纹/陨石面盘面工艺、Parachrom 与 Chronergy 机芯工程及表壳打磨拉丝翻新红线）
 - 编码实战：**[劳力士型号解读](/brands/rolex/reference-guide)**（彻底破译 4/5/6 位参考编号、倒数第二位表圈代码、末位材质代码与字母后缀）
 - 专属专章：**[劳力士表带类型](/brands/rolex/bracelets)**（一文分清蚝式带、五珠带、元首带、Oysterflex 胶带及 Easylink / Glidelock 微调扣）
+- 横向通关：**[看图识表总纲与 8 组关联型号对比记忆](/brands/rolex/comparisons/)**（24 款三步交互定位器 + 新老钢迪/胶带迪/绿金迪/彩虹迪/DD双尺寸/三大旋转圈横向防错价）

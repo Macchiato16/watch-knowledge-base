@@ -289,6 +289,21 @@ export default defineConfig({
               items: [
                 { text: '126655 · 40mm 玫瑰金哑光陶圈胶带', link: '/brands/rolex/yacht-master/126655' }
               ]
+            },
+            {
+              text: '关联型号与对比记忆',
+              collapsed: true,
+              items: [
+                { text: '看图识表总纲（24款定位器）', link: '/brands/rolex/comparisons/' },
+                { text: '116500LN vs 126500LN · 钢迪两代', link: '/brands/rolex/comparisons/daytona-steel-116500ln-vs-126500ln' },
+                { text: '116518LN vs 126518LN · 胶带金迪矩阵', link: '/brands/rolex/comparisons/daytona-oysterflex-116515ln-116518ln-vs-126518ln' },
+                { text: '全金迪与 126506 铂金透底冰蓝迪', link: '/brands/rolex/comparisons/daytona-precious-116505-116508-vs-126505-126508-126506' },
+                { text: '116595RBOW vs 126599RBOW · 原厂彩虹迪', link: '/brands/rolex/comparisons/daytona-rainbow-116595rbow-vs-126599rbow' },
+                { text: '128238 vs 228238 · 元首表 36与40对决', link: '/brands/rolex/comparisons/day-date-128238-vs-228238' },
+                { text: '126334 vs Day-Date · 狗牙圈正装防混', link: '/brands/rolex/comparisons/fluted-dress-datejust-126334-vs-day-date' },
+                { text: '水鬼 vs GMT vs 游艇 · 三大旋转圈切分', link: '/brands/rolex/comparisons/rotating-bezel-submariner-vs-gmt-vs-yacht-master' },
+                { text: 'GMT-Master II 六款全矩阵防错价', link: '/brands/rolex/comparisons/gmt-master-ii-six-models-matrix' }
+              ]
             }
           ]
         }
