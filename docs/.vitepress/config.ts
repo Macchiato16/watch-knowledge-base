@@ -320,6 +320,35 @@ export default defineConfig({
                 { text: '品牌工艺', link: '/brands/audemars-piguet/craftsmanship' },
                 { text: '型号解读', link: '/brands/audemars-piguet/reference-guide' }
               ]
+            },
+            {
+              text: '皇家橡树（Royal Oak）',
+              collapsed: true,
+              items: [
+                { text: '15202 · 39mm 初代血统 Jumbo 超薄', link: '/brands/audemars-piguet/royal-oak/15202' },
+                { text: '16202 · 39mm 50周年换代 Jumbo 超薄', link: '/brands/audemars-piguet/royal-oak/16202' },
+                { text: '15500 · 41mm 上一代自动大三针', link: '/brands/audemars-piguet/royal-oak/15500' },
+                { text: '15510 · 41mm 现行自动大三针主力', link: '/brands/audemars-piguet/royal-oak/15510' },
+                { text: '15407 · 41mm 金属/霜金双摆轮镂空', link: '/brands/audemars-piguet/royal-oak/15407' },
+                { text: '15416 · 41mm 全陶瓷双摆轮镂空', link: '/brands/audemars-piguet/royal-oak/15416' },
+                { text: '26331 · 41mm 纤薄密底熊猫计时', link: '/brands/audemars-piguet/royal-oak/26331' },
+                { text: '26239 · 41mm 过渡款一体飞返计时', link: '/brands/audemars-piguet/royal-oak/26239' },
+                { text: '26240 · 41mm 现行一体飞返计时主力', link: '/brands/audemars-piguet/royal-oak/26240' },
+                { text: '15550 · 37mm 男女通吃光圈自动', link: '/brands/audemars-piguet/royal-oak/15550' },
+                { text: '15551 · 37mm 原厂 40 钻圈自动', link: '/brands/audemars-piguet/royal-oak/15551' },
+                { text: '77350 · 34mm 全陶瓷配玫瑰金螺丝', link: '/brands/audemars-piguet/royal-oak/77350' },
+                { text: '77451 · 34mm 原厂 40 钻圈女装自动', link: '/brands/audemars-piguet/royal-oak/77451' },
+                { text: '67650 · 33mm 纤薄双针女装石英', link: '/brands/audemars-piguet/royal-oak/67650' }
+              ]
+            },
+            {
+              text: '皇家橡树离岸型（Offshore）',
+              collapsed: true,
+              items: [
+                { text: '15720 · 42mm 专业潜水表 Diver', link: '/brands/audemars-piguet/royal-oak-offshore/15720' },
+                { text: '26238 · 42mm 纵三眼一体飞返计时', link: '/brands/audemars-piguet/royal-oak-offshore/26238' },
+                { text: '26231 · 37mm 原厂 32 大钻圈胶带计时', link: '/brands/audemars-piguet/royal-oak-offshore/26231' }
+              ]
             }
           ]
         }
@@ -441,13 +470,13 @@ export default defineConfig({
             tokenize: (text: string) => {
               const normalized = text.toLowerCase()
               const tokens: string[] = []
-              // 提取英文、数字型号及带连字符/斜杠的编号（如 5711/1a、rm055、3d）
-              const asciiMatches = normalized.match(/[a-z0-9]+(?:[/-][a-z0-9]+)*/g)
+              // 提取英文、数字型号及带连字符/斜杠/圆点的编号（如 5711/1a、rm055、15510st.oo.1320st.01）
+              const asciiMatches = normalized.match(/[a-z0-9]+(?:[/.-][a-z0-9]+)*/g)
               if (asciiMatches) {
                 for (const m of asciiMatches) {
                   tokens.push(m)
-                  if (m.includes('/') || m.includes('-')) {
-                    tokens.push(...m.split(/[/-]/).filter(Boolean))
+                  if (m.includes('/') || m.includes('-') || m.includes('.')) {
+                    tokens.push(...m.split(/[/.-]/).filter(Boolean))
                   }
                 }
               }
