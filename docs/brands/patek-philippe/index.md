@@ -157,10 +157,11 @@
 
 ## 下一步学习
 
-掌握品牌历史、PP 印记与五大系列轮廓后，请继续按顺序阅读百达翡丽的三篇基础必修专章与看图识表对比模块：
+掌握品牌历史、PP 印记与五大系列轮廓后，请继续按顺序阅读百达翡丽的五篇基础必修专章与看图识表对比模块：
 - 下一篇：**[百达翡丽品牌材质](/brands/patek-philippe/materials)**（深入百达翡丽材质尾缀字母规律、贵金属配比与铂金 6 点位真钻暗记）
 - 进阶必读：**[百达翡丽品牌工艺](/brands/patek-philippe/craftsmanship)**（掌握 PP 印记整表精修标准、壳链刀锋倒角、大明火珐琅 `EMAIL` 与二手品相防坑红线）
 - 编码实战：**[百达翡丽型号解读](/brands/patek-philippe/reference-guide)**（彻底拆解 4 位/5 位数字型号与 `/1A`、`/200`、`/1300A`、`G-001` 等后缀编码含义）
+- 五金断代：**[百达翡丽表扣换代与演进](/brands/patek-philippe/clasps)**（系统掌握鹦鹉螺 `4 mm` 可锁微调新扣、手雷 2021 四独立锁扣断代与 18K 金/铂金“灯笼扣”防调包红线）
 - 证书风控：**[百达翡丽保卡演变](/brands/patek-philippe/warranty-evolution)**（深入历代原产地证书“出生纸”断代、2024 年 5 年全球联保新政与新老对比验伪）
 - **看图识表总纲与关联型号对比（3秒视觉锚点定位器） →**：**[进入 24 款运动表看图识表总纲](/brands/patek-philippe/comparisons/)**，内含交互式特征筛选漏斗与 8 组同系列真易混 / 前后代精悍小对比：
   - 鹦鹉螺内部对比：[5711 vs 5811 vs 5810（极简三代）](/brands/patek-philippe/comparisons/nautilus-5711-5811-5810) · [5726 vs 5740（年历与万年历）](/brands/patek-philippe/comparisons/nautilus-5726-5740) · [5980 vs 5990（计时前后代）](/brands/patek-philippe/comparisons/nautilus-5980-5990) · [7010 vs 7118（女款双姝）](/brands/patek-philippe/comparisons/nautilus-ladies-7010-7118)

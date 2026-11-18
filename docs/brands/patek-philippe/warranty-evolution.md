@@ -163,4 +163,5 @@
 
 - 返回品牌总览：**[百达翡丽品牌导览与热门系列全览](/brands/patek-philippe/)**
 - 编码核对实战：**[百达翡丽型号解读（Reference Guide）](/brands/patek-philippe/reference-guide)**（核查 `/1`、`/200`、`/1300` 与 `-001` 尾码防改盘）
+- 五金代际核验：**[百达翡丽表扣换代与演进](/brands/patek-philippe/clasps)**（结合出生纸年份交叉核对 2021 手雷新扣、2022 鹦鹉螺可锁微调扣与 18K 金/铂金灯笼扣）
 - 壳芯工艺核验：**[百达翡丽品牌工艺](/brands/patek-philippe/craftsmanship)**（掌握 PP 印记打磨标准与开盖验表细节）

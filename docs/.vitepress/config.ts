@@ -62,6 +62,7 @@ export default defineConfig({
                 { text: '品牌材质', link: '/brands/patek-philippe/materials' },
                 { text: '品牌工艺', link: '/brands/patek-philippe/craftsmanship' },
                 { text: '型号解读', link: '/brands/patek-philippe/reference-guide' },
+                { text: '表扣换代与演进', link: '/brands/patek-philippe/clasps' },
                 { text: '保卡演变', link: '/brands/patek-philippe/warranty-evolution' }
               ]
             },
